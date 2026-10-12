@@ -206,59 +206,144 @@
       "pytest",
       "GitHub Actions"
     ],
-    "note": "The source is private because it handles personal financial data. Happy to demo it live."
+    "note": "The source is private because it handles personal financial data. Happy to demo it live.",
+    "categories": []
   },
-  "nowBuilding": [
+  "projects": [
     {
       "name": "Agentic AI for manufacturing operations",
       "status": "Exploring",
-      "description": "Evaluating Generative AI and agent-based applications for plant operations with technology partners."
+      "description": "Evaluating Generative AI and agent-based applications for plant operations with technology partners.",
+      "link": "",
+      "skills": [
+        "GenAI",
+        "Agents"
+      ],
+      "categories": [
+        "AI"
+      ]
     },
     {
-      "name": "This portfolio",
-      "status": "Live",
-      "description": "Open-source, built with Astro and Tailwind CSS on top of the DevPortfolio template and hosted on GitHub Pages.",
-      "link": "https://github.com/mpavu/mpavu.github.io"
-    }
-  ],
-  "projects": [
+      "name": "RapidMLOps",
+      "status": "Thesis",
+      "description": "My master thesis: a framework that takes ML models from JMP to PLC-connected edge devices for closed-loop control. Read the case study.",
+      "link": "#case-4",
+      "skills": [
+        "Azure ML",
+        "OPC UA",
+        "MQTT"
+      ],
+      "categories": [
+        "ML",
+        "IoT"
+      ]
+    },
     {
       "name": "Claude Slides",
+      "status": "",
       "description": "Ready-to-use AI slide-creation setup for GitHub Copilot and other coding agents.",
       "link": "https://github.com/mpavu/Claude_Slides",
       "skills": [
         "GenAI",
         "Coding agents"
+      ],
+      "categories": [
+        "AI"
       ]
     },
     {
       "name": "Handwritten character recognition",
+      "status": "",
       "description": "CNN-based handwritten character recognition built with Keras and TensorFlow.",
       "link": "https://github.com/mpavu/Hand-written-character-recognization",
       "skills": [
         "Python",
         "Keras",
         "CNN"
+      ],
+      "categories": [
+        "AI",
+        "ML"
       ]
     },
     {
       "name": "Car number plate detection",
+      "status": "",
       "description": "Image-processing pipeline in MATLAB that detects and reads vehicle number plates for ANPR.",
       "link": "https://github.com/mpavu/car-number-plate-detection-using-matlab",
       "skills": [
         "MATLAB",
         "Computer vision"
+      ],
+      "categories": [
+        "AI"
       ]
     },
     {
       "name": "Automatic irrigation with farmer alerts",
+      "status": "",
       "description": "Arduino system with soil-moisture and ultrasonic sensors that drives two pumps and texts the farmer whenever pump status changes.",
       "link": "https://github.com/mpavu/Automatic-irrigation-system-with-notification-to-the-farmer",
       "skills": [
         "Arduino",
         "C++",
+        "Sensors"
+      ],
+      "categories": [
         "IoT"
       ]
+    },
+    {
+      "name": "Fire alert system",
+      "status": "",
+      "description": "Detects fire and sends an alert message, built on an 8051 microcontroller and simulated in Proteus and Keil.",
+      "link": "https://github.com/mpavu/fire-alert-system",
+      "skills": [
+        "8051",
+        "Proteus",
+        "Keil"
+      ],
+      "categories": [
+        "IoT"
+      ]
+    },
+    {
+      "name": "Automatic street light controller",
+      "status": "",
+      "description": "Switches street lights on and off automatically using sensors; built with Keil and Proteus.",
+      "link": "https://github.com/mpavu/Automatic-street-light-controller",
+      "skills": [
+        "Sensors",
+        "Keil",
+        "Proteus"
+      ],
+      "categories": [
+        "IoT"
+      ]
+    },
+    {
+      "name": "Smart stick: obstacle & water detector",
+      "status": "",
+      "description": "Assistive walking stick with sensors that detect obstacles and water.",
+      "link": "https://github.com/mpavu/Blind_stick_obstace-water_detector",
+      "skills": [
+        "C++",
+        "Sensors"
+      ],
+      "categories": [
+        "IoT"
+      ]
+    },
+    {
+      "name": "This portfolio",
+      "status": "Live",
+      "description": "Open-source, built with Astro and Tailwind CSS on top of the DevPortfolio template, hosted on GitHub Pages and edited with Pages CMS.",
+      "link": "https://github.com/mpavu/mpavu.github.io",
+      "skills": [
+        "Astro",
+        "Tailwind CSS"
+      ],
+      "categories": []
     }
   ],
   "experience": [
@@ -469,13 +554,59 @@
         "label": "Movies"
       },
       {
-        "emoji": "🇩🇪",
+        "emoji": "📚",
         "label": "Learning German"
       },
       {
         "emoji": "🤖",
         "label": "Futuristic AI"
       }
-    ]
-  }
+    ],
+    "currently": [
+      {
+        "label": "Learning",
+        "value": "German, A2 and climbing"
+      },
+      {
+        "label": "Building",
+        "value": "Coinfluence, my household finance dashboard"
+      },
+      {
+        "label": "Exploring",
+        "value": "Agentic AI for the factory floor"
+      },
+      {
+        "label": "Coaching",
+        "value": "A global community of AI practitioners"
+      }
+    ],
+    "photos": [
+      {
+        "image": "",
+        "caption": "On the road",
+        "alt": ""
+      },
+      {
+        "image": "",
+        "caption": "Race day",
+        "alt": ""
+      },
+      {
+        "image": "",
+        "caption": "In the kitchen",
+        "alt": ""
+      },
+      {
+        "image": "",
+        "caption": "Award moment",
+        "alt": ""
+      }
+    ],
+    "languages": "English, Tamil, Hindi and German (learning)"
+  },
+  "projectCategories": [
+    "AI",
+    "ML",
+    "IoT"
+  ]
 }

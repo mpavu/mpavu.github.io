@@ -179,30 +179,19 @@ content:
           - name: note
             label: Privacy note
             type: text
+          - name: categories
+            label: Categories (leave empty to show only under All)
+            type: string
+            list: true
 
       # ---------- Projects ----------
-      - name: nowBuilding
-        label: Now building
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{name}"
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: status
-            label: Status label
-            type: string
-          - name: description
-            label: Description
-            type: text
-          - name: link
-            label: Link (optional)
-            type: string
+      - name: projectCategories
+        label: Project filter buttons (categories)
+        type: string
+        list: true
+        description: Shown as filter buttons above Projects. Tag projects with the same words.
       - name: projects
-        label: Personal & open-source projects
+        label: Projects (cards under the featured project)
         type: object
         list:
           collapsible:
@@ -215,8 +204,15 @@ content:
           - name: description
             label: Description
             type: text
+          - name: status
+            label: Status badge (optional, e.g. Exploring, Live)
+            type: string
+          - name: categories
+            label: Categories (must match the filter buttons, e.g. AI, ML, IoT)
+            type: string
+            list: true
           - name: link
-            label: Link
+            label: Link (web address, or #case-1 for a case study)
             type: string
           - name: skills
             label: Skill chips
@@ -358,6 +354,34 @@ content:
           - name: intro
             label: Intro
             type: text
+          - name: photos
+            label: Photos (empty image = "coming soon" placeholder; the first one is large)
+            type: object
+            list: true
+            fields:
+              - name: image
+                label: Photo
+                type: image
+              - name: caption
+                label: Caption
+                type: string
+              - name: alt
+                label: Description for screen readers
+                type: string
+          - name: currently
+            label: Right now
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Label (e.g. Learning)
+                type: string
+              - name: value
+                label: Text
+                type: string
+          - name: languages
+            label: Languages I speak
+            type: string
           - name: interests
             label: Interests
             type: object

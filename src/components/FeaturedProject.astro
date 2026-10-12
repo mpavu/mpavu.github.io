@@ -1,22 +1,28 @@
 ---
 import { siteConfig } from "../config";
 const fp = siteConfig.featuredProject;
+const cats = (fp?.categories ?? []).filter(Boolean);
 // Abstract "dashboard" art: no real financial data is shown
 const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
 ---
 
 {
   fp && (
-    <section id="featured" aria-labelledby="featured-title" class="relative overflow-hidden bg-blush dark:bg-white/[0.03] border-y border-gray-200 dark:border-white/10">
-      <div class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <article
+      id="featured"
+      data-project
+      data-cats={cats.join(" ")}
+      aria-labelledby="featured-title"
+      class="scroll-mt-24 rounded-3xl bg-blush dark:bg-white/[0.04] ring-1 ring-black/5 dark:ring-white/10 p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center"
+    >
         <div class="reveal">
           <p class="inline-flex items-center gap-2 rounded-full bg-[var(--accent)]/10 px-3 py-1 font-mono text-xs text-[var(--accent)] dark:text-teal-300">
             <span aria-hidden="true">✦</span> Featured project · {fp.tag}
           </p>
-          <h2 id="featured-title" class="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-gray-900 dark:text-white">
+          <h3 id="featured-title" class="mt-6 font-serif text-4xl sm:text-5xl leading-[1.05] text-gray-900 dark:text-white">
             <span class="sr-only">{fp.name}: </span>
             {fp.headlineStart}{" "}<em class="italic underline decoration-tangerine decoration-[0.12em] underline-offset-[0.12em]">{fp.headlineAccent}</em>{" "}{fp.headlineEnd}
-          </h2>
+          </h3>
           <p class="mt-6 text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-400 max-w-xl">
             <strong class="text-gray-900 dark:text-white">{fp.name}</strong> is {fp.summary.replace(/^A /, "a ")}
           </p>
@@ -74,7 +80,7 @@ const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
           {fp.decisions.map((d) => (
             <div class="reveal rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-5">
               <p class="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">Product decision</p>
-              <h3 class="mt-1 font-bold text-gray-900 dark:text-white">{d.title}</h3>
+              <h4 class="mt-1 font-bold text-gray-900 dark:text-white">{d.title}</h4>
               <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{d.text}</p>
             </div>
           ))}
@@ -93,7 +99,6 @@ const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
             )}
           </p>
         </div>
-      </div>
-    </section>
+    </article>
   )
 }

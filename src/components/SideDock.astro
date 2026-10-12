@@ -6,10 +6,9 @@ import Icon from "./Icon.astro";
 
 const items = [
   { id: "hero", label: "Home", icon: "home" },
-  { id: "work", label: "Case studies", icon: "briefcase", show: siteConfig.caseStudies?.length },
-  { id: "featured", label: "Coinfluence", icon: "wallet", show: siteConfig.featuredProject },
-  { id: "projects", label: "Projects", icon: "code", show: siteConfig.projects?.length },
   { id: "about", label: "About", icon: "user" },
+  { id: "work", label: "Case studies", icon: "briefcase", show: siteConfig.caseStudies?.length },
+  { id: "projects", label: "Projects", icon: "code", show: siteConfig.projects?.length || siteConfig.featuredProject },
   { id: "experience", label: "Experience", icon: "history", show: siteConfig.experience?.length },
   { id: "skills", label: "Skills", icon: "tools", show: siteConfig.skillGroups?.length },
   { id: "beyond", label: "Beyond work", icon: "heart", show: siteConfig.beyondWork },
