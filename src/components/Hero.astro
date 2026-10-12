@@ -1,0 +1,109 @@
+---
+import { siteConfig } from "../config";
+import Icon from "./Icon.astro";
+
+const base = import.meta.env.BASE_URL;
+const { social } = siteConfig;
+// Industrial / AI motifs replacing the template's code symbols
+const symbols = [
+  { x: 50, y: 50, s: 24, r: -15, t: "∿" },
+  { x: 150, y: 100, s: 20, r: 10, t: "⚙" },
+  { x: 250, y: 80, s: 18, r: -5, t: "Σ" },
+  { x: 100, y: 200, s: 22, r: 15, t: "∂" },
+  { x: 300, y: 180, s: 20, r: -10, t: "◇" },
+  { x: 200, y: 250, s: 24, r: 5, t: "λ" },
+  { x: 50, y: 320, s: 18, r: -8, t: "≈" },
+  { x: 350, y: 300, s: 22, r: 12, t: "⊕" },
+  { x: 150, y: 350, s: 20, r: -15, t: "μ" },
+  { x: 250, y: 370, s: 24, r: 8, t: "∫" },
+];
+---
+
+<div id="hero" class="relative isolate overflow-hidden pt-28 pb-16 md:min-h-screen md:flex md:items-center">
+  <div
+    class="absolute inset-0 -z-10"
+    style="background: radial-gradient(ellipse 800px 1200px at 0% 0%, color-mix(in srgb, var(--accent) 25%, transparent) 0%, color-mix(in srgb, var(--accent) 12%, transparent) 25%, transparent 70%)"
+  >
+  </div>
+  <svg
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 size-full stroke-gray-200 dark:stroke-white/5 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+  >
+    <defs>
+      <pattern x="50%" y={-1} id="hero-grid" width={200} height={200} patternUnits="userSpaceOnUse">
+        <path d="M.5 200V.5H200" fill="none"></path>
+      </pattern>
+      <pattern id="hero-symbols" x="0" y="0" width="400" height="400" patternUnits="userSpaceOnUse">
+        {
+          symbols.map((p) => (
+            <text x={p.x} y={p.y} fill={siteConfig.accentColor} font-family="monospace" font-size={p.s} transform={`rotate(${p.r})`}>
+              {p.t}
+            </text>
+          ))
+        }
+      </pattern>
+    </defs>
+    <rect fill="url(#hero-symbols)" width="100%" height="100%" opacity="0.18"></rect>
+    <rect fill="url(#hero-grid)" width="100%" height="100%" stroke-width={0}></rect>
+  </svg>
+
+  <div class="max-w-7xl w-full mx-auto px-6 sm:px-12 md:px-16 lg:px-24">
+    <p class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-white/10 bg-white/70 dark:bg-white/5 px-3 py-1 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 animate-fade-in">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-60 animate-ping"></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+      </span>
+      {siteConfig.status}
+    </p>
+
+    <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white animate-fade-in animation-delay-200">
+      Hi, I'm <span class="text-[var(--accent)]">{siteConfig.name}</span>
+    </h1>
+    <p class="mt-4 font-mono text-sm sm:text-base text-gray-600 dark:text-gray-400 animate-fade-in animation-delay-200">
+      {siteConfig.title} · {siteConfig.tagline}
+    </p>
+    <p class="mt-6 max-w-3xl text-xl sm:text-2xl md:text-3xl font-semibold leading-snug text-gray-800 dark:text-gray-100 animate-fade-in animation-delay-400">
+      {siteConfig.headline}
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-3 animate-fade-in animation-delay-600">
+      <a href="#work" class="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-90 transition-opacity">
+        See case studies <Icon name="arrow" class="h-4 w-4" />
+      </a>
+      {
+        siteConfig.resume && (
+          <a href={`${base}${siteConfig.resume.replace(/^\//, "")}`} download class="inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-white/20 px-5 py-3 text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+            <Icon name="download" class="h-4 w-4" /> Download CV
+          </a>
+        )
+      }
+      <a href="#contact" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-white/20 px-5 py-3 text-sm font-semibold text-gray-800 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+        Get in touch
+      </a>
+      <div class="flex items-center gap-4 sm:ml-4 text-gray-600 dark:text-gray-400">
+        {social.email && (<a href={`mailto:${social.email}`} aria-label="Email" class="hover:text-[var(--accent)] transition-colors"><Icon name="email" /></a>)}
+        {social.linkedin && (<a href={social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-[var(--accent)] transition-colors"><Icon name="linkedin" /></a>)}
+        {social.github && (<a href={social.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-[var(--accent)] transition-colors"><Icon name="github" /></a>)}
+      </div>
+    </div>
+
+    <p class="mt-8 inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 animate-fade-in animation-delay-600">
+      <Icon name="pin" class="h-4 w-4" />
+      {siteConfig.location}
+    </p>
+  </div>
+</div>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-600 { animation-delay: 0.6s; }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in { animation: none; opacity: 1; }
+  }
+</style>

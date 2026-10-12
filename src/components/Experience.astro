@@ -1,0 +1,40 @@
+---
+import { siteConfig } from "../config";
+import SectionHeading from "./SectionHeading.astro";
+const experience = siteConfig.experience ?? [];
+---
+
+{
+  experience.length > 0 && (
+    <section id="experience" class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <SectionHeading label="career" title="Experience" />
+        <ol class="lg:col-span-8 relative border-l-2 border-gray-200 dark:border-white/10 ml-2 space-y-10">
+          {experience.map((exp, i) => (
+            <li class="reveal relative pl-8">
+              <span
+                class:list={[
+                  "absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 border-[var(--accent)]",
+                  i === 0 ? "bg-[var(--accent)]" : "bg-white dark:bg-[#0b1110]",
+                ]}
+              />
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
+                <span class="font-mono text-xs sm:text-sm text-gray-500 dark:text-gray-400 shrink-0 sm:ml-4">{exp.dateRange}</span>
+              </div>
+              <p class="mt-1 text-base font-medium text-[var(--accent)]">{exp.company}</p>
+              <ul class="mt-3 space-y-2">
+                {exp.bullets.map((b) => (
+                  <li class="flex items-start">
+                    <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2.5 mr-3 shrink-0" />
+                    <span class="text-sm sm:text-base leading-relaxed text-gray-600 dark:text-gray-400">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}

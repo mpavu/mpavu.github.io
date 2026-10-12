@@ -1,0 +1,24 @@
+---
+import { siteConfig } from "../config";
+const principles = siteConfig.principles ?? [];
+---
+
+{
+  principles.length > 0 && (
+    <section aria-labelledby="principles-title" class="bg-gray-900 dark:bg-white/[0.03] text-white">
+      <div class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-20">
+        <p class="font-mono text-sm text-teal-300">// how I work</p>
+        <h2 id="principles-title" class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Principles I bring to every team</h2>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {principles.map((p, i) => (
+            <div class="reveal rounded-xl border border-white/10 bg-white/5 p-6">
+              <p class="font-mono text-sm text-teal-300">0{i + 1}</p>
+              <h3 class="mt-2 text-lg font-bold">{p.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-gray-300">{p.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

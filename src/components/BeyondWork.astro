@@ -1,0 +1,26 @@
+---
+import { siteConfig } from "../config";
+import SectionHeading from "./SectionHeading.astro";
+const beyond = siteConfig.beyondWork;
+---
+
+{
+  beyond && (
+    <section id="beyond" class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        <SectionHeading label="personal" title="Beyond Work" />
+        <div class="lg:col-span-8 reveal">
+          <p class="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">{beyond.intro}</p>
+          <ul class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {beyond.interests.map((it) => (
+              <li class="flex items-center gap-3 rounded-xl border border-gray-200 dark:border-white/10 p-4 hover:border-[var(--accent)] transition-colors">
+                <span class="text-2xl" aria-hidden="true">{it.emoji}</span>
+                <span class="font-medium text-gray-800 dark:text-gray-200">{it.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  )
+}
