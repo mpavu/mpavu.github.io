@@ -116,6 +116,34 @@ export const siteConfig = {
   caseStudyNote:
     "Dollar values are rounded estimates from internal business cases, not audited savings. \"Identified opportunity\" means potential value across further sites, not realised value. Results are team outcomes; my role is stated on each case. Details are kept at a level that respects confidentiality.",
 
+  // Flagship personal product, shown in its own section
+  featuredProject: {
+    tag: "Personal product · Fintech",
+    name: "Coinfluence",
+    headlineStart: "Turning messy bank exports into",
+    headlineAccent: "clarity",
+    headlineEnd: "about money.",
+    summary:
+      "A personal finance dashboard I designed and built for my household. It reads monthly exports from six German banks and brokers and answers three questions: how much did we spend, how much did we save and invest, and who owes whom on the shared card.",
+    stats: [
+      { value: "6", label: "Bank & broker sources" },
+      { value: "81", label: "Automated tests" },
+    ],
+    features: [
+      "One upload for every bank: the account is detected and duplicates are skipped",
+      "Swipe deck to split shared credit-card charges, with a settle-up checklist",
+      "Budgets, recurring-payment detection and net worth over time",
+      "Two profiles with separate data and settings",
+    ],
+    decisions: [
+      { title: "Local-first by design", text: "Financial data never leaves the laptop; sync goes only to a private repo, and the sync script refuses to run on a public one." },
+      { title: "Trust over features", text: "Automatic backups before every save, file locking, and damaged files are never overwritten." },
+      { title: "Tested without real data", text: "The test suite builds fake statements for every bank, and CI runs it on every push." },
+    ],
+    stack: ["Python", "Reflex", "pandas", "Plotly", "pytest", "GitHub Actions"],
+    note: "The source is private because it handles personal financial data. Happy to demo it live.",
+  },
+
   // Things currently in progress
   nowBuilding: [
     {

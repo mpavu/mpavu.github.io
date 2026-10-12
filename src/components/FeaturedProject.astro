@@ -1,0 +1,99 @@
+---
+import { siteConfig } from "../config";
+const fp = siteConfig.featuredProject;
+// Abstract "dashboard" art: no real financial data is shown
+const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
+---
+
+{
+  fp && (
+    <section id="featured" aria-labelledby="featured-title" class="relative overflow-hidden bg-[#f6f7f4] dark:bg-white/[0.02] border-y border-gray-200 dark:border-white/10">
+      <div class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="reveal">
+          <p class="inline-flex items-center gap-2 rounded-full bg-[var(--accent)]/10 px-3 py-1 font-mono text-xs text-[var(--accent)] dark:text-teal-300">
+            <span aria-hidden="true">✦</span> Featured project · {fp.tag}
+          </p>
+          <h2 id="featured-title" class="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-gray-900 dark:text-white">
+            <span class="sr-only">{fp.name}: </span>
+            {fp.headlineStart}{" "}<em class="italic text-[var(--accent)] dark:text-teal-300">{fp.headlineAccent}</em>{" "}{fp.headlineEnd}
+          </h2>
+          <p class="mt-6 text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-400 max-w-xl">
+            <strong class="text-gray-900 dark:text-white">{fp.name}</strong> is {fp.summary.replace(/^A /, "a ")}
+          </p>
+          <ul class="mt-6 space-y-2">
+            {fp.features.map((f) => (
+              <li class="flex items-start gap-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
+                <span class="mt-1 text-[var(--accent)] dark:text-teal-300" aria-hidden="true">✓</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="reveal relative">
+          <div
+            class="relative aspect-[4/3.4] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5"
+            style="background: radial-gradient(120% 90% at 85% 10%, #8b8cf0 0%, #5b5fd6 35%, #2d2f8f 70%, #1b1c55 100%)"
+            role="img"
+            aria-label={`Abstract illustration of the ${fp.name} dashboard`}
+          >
+            <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 400 340" preserveAspectRatio="none" aria-hidden="true">
+              {Array.from({ length: 14 }).map((_, i) => (
+                <path
+                  d={`M -20 ${40 + i * 18} C 100 ${-30 + i * 25}, 220 ${300 - i * 12}, 420 ${60 + i * 16}`}
+                  fill="none"
+                  stroke="#0b0c3a"
+                  stroke-width="0.8"
+                />
+              ))}
+            </svg>
+            <div class="absolute left-[8%] right-[8%] top-[9%] rounded-2xl bg-white/10 backdrop-blur-sm ring-1 ring-white/20 p-4">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] tracking-widest uppercase text-white/70">Spent vs saved · 12 months</span>
+                <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
+              </div>
+              <div class="mt-4 flex items-end gap-1.5 h-28 sm:h-36" aria-hidden="true">
+                {bars.map((h, i) => (
+                  <span class="flex-1 rounded-t-sm" style={`height:${h}%; background: ${i % 3 === 2 ? "rgba(167,243,208,.9)" : "rgba(255,255,255,.55)"}`}></span>
+                ))}
+              </div>
+            </div>
+
+            <dl class="absolute left-4 right-4 bottom-4 sm:left-6 sm:right-6 sm:bottom-6 grid grid-cols-2 gap-4 rounded-2xl bg-white/15 backdrop-blur-md ring-1 ring-white/25 px-5 py-4 text-white">
+              {fp.stats.map((s) => (
+                <div>
+                  <dd class="font-serif text-3xl sm:text-4xl">{s.value}</dd>
+                  <dt class="mt-1 font-mono text-[10px] sm:text-xs tracking-widest uppercase text-white/80">{s.label}</dt>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {fp.decisions.map((d) => (
+            <div class="reveal rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-5">
+              <p class="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">Product decision</p>
+              <h3 class="mt-1 font-bold text-gray-900 dark:text-white">{d.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{d.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="lg:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div class="flex flex-wrap gap-2">
+            {fp.stack.map((s) => (
+              <span class="px-2.5 py-1 rounded-md bg-gray-900 dark:bg-white/10 text-white dark:text-gray-200 text-xs font-medium">{s}</span>
+            ))}
+          </div>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            🔒 {fp.note}{" "}
+            {siteConfig.social.email && (
+              <a href={`mailto:${siteConfig.social.email}?subject=Coinfluence%20demo`} class="font-medium text-[var(--accent)] dark:text-teal-300 hover:underline">Ask for a demo →</a>
+            )}
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
