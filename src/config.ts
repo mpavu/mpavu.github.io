@@ -31,8 +31,7 @@ export const siteConfig = {
 
   aboutMe: [
     "I work where manufacturing meets AI. At Procter & Gamble's Kronberg Innovation Center I lead the scaling of manufacturing AI across a global plant network — anomaly detection, predictive maintenance, soft sensors, touchless quality and closed-loop control — from use-case definition to production deployment and adoption.",
-    "My focus is not only building the technology, but making sure it creates lasting value: reusable deployment patterns, MLOps on Azure and Siemens Industrial Edge, and a global coaching program that turns engineers into AI practitioners.",
-    "My background spans OT/PLC integration, cloud ML and program leadership with global stakeholders and partners such as Siemens and ABB.",
+    "I care less about the model and more about what makes it last: reusable deployment patterns, MLOps from cloud to PLC, and coaching that turns engineers into AI practitioners.",
   ],
   snapshot: [
     { label: "Role", value: "Manufacturing AI Manager, P&G" },
@@ -48,8 +47,10 @@ export const siteConfig = {
     {
       tag: "Predictive maintenance",
       metric: "~$5.8M",
-      metricLabel: "estimated value, single site",
+      metricLabel: "estimated value · single-site business case",
       name: "Anomaly detection as a reusable capability",
+      role: "Owner of the deployment approach and coach to site project teams; sites built and ran their own projects.",
+      flow: ["Historian & sensor data", "SmartBox / Industrial Edge", "Anomaly model", "Early alert to maintenance", "Reusable template"],
       problem:
         "A critical gear failure on a mill showed that degradation was visible in the data long before it became a breakdown — but every site was building detection from scratch.",
       action:
@@ -65,6 +66,8 @@ export const siteConfig = {
       metric: "~$2M",
       metricLabel: "estimated value per implementation",
       name: "Touchless quality: replacing manual sampling",
+      role: "Set up the ML approach and led alignment with the quality organisation, delivered with site and data teams.",
+      flow: ["Line process data", "Cloud ML (Azure)", "Continuous quality prediction", "Quality-org validation", "Scale-up"],
       problem:
         "Product quality was checked through manual sampling — slow, labour-intensive and blind between samples.",
       action:
@@ -80,6 +83,8 @@ export const siteConfig = {
       metric: "200+",
       metricLabel: "practitioners enabled",
       name: "WISE Coach Qualification (WCQ) program",
+      role: "Global program lead: content, coaching frameworks and session facilitation.",
+      flow: ["Real plant problem", "Coaching & learning journey", "AI-X templates", "Deployed solution", "Community of practice"],
       problem:
         "AI training was happening, but it rarely turned into deployed solutions on the plant floor.",
       action:
@@ -92,9 +97,11 @@ export const siteConfig = {
     },
     {
       tag: "Master thesis · MLOps",
-      metric: "ms",
-      metricLabel: "closed-loop predictions on the line",
+      metric: "3",
+      metricLabel: "PLC vendor families supported (Siemens, Rockwell, Mitsubishi)",
       name: "RapidMLOps: ML from Excel-like tools to the PLC",
+      role: "Designed and built the framework as my master thesis and led the production-line pilot.",
+      flow: ["JMP model", "Package (Azure ML + GitHub)", "Siemens edge device", "PLC read/write (S7, OPC UA, MQTT)", "Closed-loop control"],
       problem:
         "Engineers built good models in JMP, but there was no path to run them on edge devices against live PLC data.",
       action:
@@ -107,7 +114,7 @@ export const siteConfig = {
     },
   ],
   caseStudyNote:
-    "Values are estimates from internal business cases and are rounded. Details are kept at a level that respects confidentiality.",
+    "Dollar values are rounded estimates from internal business cases, not audited savings. \"Identified opportunity\" means potential value across further sites, not realised value. Results are team outcomes; my role is stated on each case. Details are kept at a level that respects confidentiality.",
 
   // Things currently in progress
   nowBuilding: [
@@ -166,7 +173,6 @@ export const siteConfig = {
       bullets: [
         "Lead the scaling of manufacturing AI across P&G's global plant network; coached 55+ use cases across 11+ business units and 18+ sites (~$15M+ estimated single-instance value, ~$38M+ identified opportunity).",
         "Designed a repeatable deployment pattern for shrink-sleeve defect prediction planned across 19 lines; deployed multi-cavity edge anomaly monitoring at a German plant.",
-        "Lead the global WISE Coach Qualification program and AI-X self-serve templates adopted across 6 business units.",
         "Evaluate and pilot technologies with Siemens, ABB, Falcon Labs and AI vendors, including GenAI and agent-based applications.",
       ],
     },
@@ -175,9 +181,7 @@ export const siteConfig = {
       title: "Master Thesis Student & Intern – Manufacturing MLOps",
       dateRange: "May 2023 – Feb 2024",
       bullets: [
-        "Built RapidMLOps, an end-to-end framework to package, deploy and manage ML models in manufacturing.",
-        "Enabled JMP models on Siemens edge devices with real-time S7 PLC data and write-back for closed-loop control.",
-        "Led the production-line pilot and trained professionals from multiple business units.",
+        "Built RapidMLOps, a framework to take ML models from JMP to PLC-connected edge devices, and led its production-line pilot (case study 04).",
       ],
     },
     {
@@ -201,28 +205,24 @@ export const siteConfig = {
 
   skillGroups: [
     {
-      name: "AI & Data Science",
-      items: ["Machine learning", "Anomaly detection", "Predictive maintenance", "Time-series forecasting", "Soft sensors", "Generative & agentic AI", "JMP"],
+      name: "Program & product leadership",
+      items: ["Global program management", "Stakeholder & vendor management", "Change management & adoption", "Capability building & coaching", "Digital product management"],
+      proof: [{ label: "WCQ program", href: "#case-3" }, { label: "Touchless quality", href: "#case-2" }],
     },
     {
-      name: "MLOps & Cloud",
-      items: ["Azure ML", "Azure Databricks", "AWS", "Docker", "GitHub & Copilot", "CI/CD", "Prometheus"],
+      name: "Applied AI",
+      items: ["Anomaly detection", "Predictive maintenance", "Soft sensors", "Time-series ML", "Generative & agentic AI"],
+      proof: [{ label: "Anomaly detection", href: "#case-1" }, { label: "Touchless quality", href: "#case-2" }],
+    },
+    {
+      name: "MLOps & cloud",
+      items: ["Azure ML", "Azure Databricks", "Docker", "GitHub & CI/CD", "Python", "SQL"],
+      proof: [{ label: "RapidMLOps", href: "#case-4" }],
     },
     {
       name: "Industrial / OT",
-      items: ["Siemens Industrial Edge", "SmartBox", "PLC integration (S7, Rockwell, Mitsubishi)", "OPC UA", "MQTT", "Profinet", "Node-RED", "TIA Portal"],
-    },
-    {
-      name: "Programming",
-      items: ["Python", "SQL", "R", "MATLAB / Simulink", "Power BI", "Power Apps"],
-    },
-    {
-      name: "Program & Product",
-      items: ["Global program management", "Stakeholder & vendor management", "Risk management", "Agile", "Digital product management"],
-    },
-    {
-      name: "Leadership",
-      items: ["Capability building & coaching", "Training program design", "Change management", "Influencing up and across"],
+      items: ["Siemens Industrial Edge", "SmartBox", "PLC integration", "OPC UA", "MQTT"],
+      proof: [{ label: "RapidMLOps", href: "#case-4" }, { label: "Anomaly detection", href: "#case-1" }],
     },
   ],
 
@@ -254,9 +254,9 @@ export const siteConfig = {
   // How I work — short principles
   principles: [
     { title: "Plan with intention, adapt with ease", text: "Clear goals, short loops, and the flexibility to change course when the data says so." },
-    { title: "Pilot to production", text: "A use case isn't done until it runs on the line and someone owns it." },
-    { title: "Build once, reapply everywhere", text: "Templates and patterns that let the next site go live in a fraction of the effort." },
-    { title: "People before platforms", text: "Adoption is a people problem. Coaching and community make technology stick." },
+    { title: "Pilot to production", text: "A use case isn't done until it runs on the line and someone owns it.", proof: { label: "RapidMLOps line pilot", href: "#case-4" } },
+    { title: "Build once, reapply everywhere", text: "Templates and patterns that let the next site go live in a fraction of the effort.", proof: { label: "Anomaly-detection template", href: "#case-1" } },
+    { title: "People before platforms", text: "Adoption is a people problem. Coaching and community make technology stick.", proof: { label: "WCQ program", href: "#case-3" } },
   ],
 
   // Personal

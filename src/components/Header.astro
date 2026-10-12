@@ -3,10 +3,10 @@ import { siteConfig } from "../config";
 import Icon from "./Icon.astro";
 
 const links = [
-  { href: "#about", label: "About" },
   { href: "#work", label: "Work", show: siteConfig.caseStudies?.length },
-  { href: "#experience", label: "Experience", show: siteConfig.experience?.length },
   { href: "#projects", label: "Projects", show: siteConfig.projects?.length },
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience", show: siteConfig.experience?.length },
   { href: "#skills", label: "Skills", show: siteConfig.skillGroups?.length },
   { href: "#beyond", label: "Beyond work", show: siteConfig.beyondWork },
   { href: "#contact", label: "Contact" },

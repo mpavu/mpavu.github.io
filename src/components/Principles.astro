@@ -11,10 +11,15 @@ const principles = siteConfig.principles ?? [];
         <h2 id="principles-title" class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Principles I bring to every team</h2>
         <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {principles.map((p, i) => (
-            <div class="reveal rounded-xl border border-white/10 bg-white/5 p-6">
+            <div class="reveal flex flex-col rounded-xl border border-white/10 bg-white/5 p-6">
               <p class="font-mono text-sm text-teal-300">0{i + 1}</p>
               <h3 class="mt-2 text-lg font-bold">{p.title}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-gray-300">{p.text}</p>
+              <p class="mt-2 text-sm leading-relaxed text-gray-300 flex-1">{p.text}</p>
+              {p.proof && (
+                <a href={p.proof.href} class="mt-4 text-sm font-medium text-teal-300 hover:underline underline-offset-2">
+                  Example: {p.proof.label} →
+                </a>
+              )}
             </div>
           ))}
         </div>
