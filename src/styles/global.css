@@ -6,6 +6,39 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "DM Serif Display", ui-serif, Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Brand palette */
+  --color-cream: #fcf4f0;
+  --color-blush: #ffd5fb;
+  --color-sky: #c0d6ff;
+  --color-tangerine: #f86c2f;
+  --color-maroon: #6d0101;
+  --color-night: #1e0605;
+
+  /* Warm, maroon-tinted neutrals replace Tailwind's grays site-wide */
+  --color-gray-50: #f8eae4;
+  --color-gray-100: #f3e0d9;
+  --color-gray-200: #ebd2c9;
+  --color-gray-300: #ddbdb2;
+  --color-gray-400: #c29a8e;
+  --color-gray-500: #8e5a51;
+  --color-gray-600: #7a453e;
+  --color-gray-700: #5e2a25;
+  --color-gray-800: #4d0b08;
+  --color-gray-900: #6d0101;
+
+  /* Light accent used on dark surfaces */
+  --color-teal-300: #ffd5fb;
+}
+
+/* --accent: brand colour for links, labels and buttons; --on-accent: text on it */
+:root {
+  --accent: #6d0101;
+  --on-accent: #fcf4f0;
+}
+.dark {
+  --accent: #ffd5fb;
+  --on-accent: #6d0101;
 }
 
 html {
@@ -15,23 +48,24 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-white);
+  background-color: var(--color-cream);
   color: var(--color-gray-800);
   -webkit-font-smoothing: antialiased;
 }
 
 .dark body {
-  background-color: #0b1110;
+  background-color: var(--color-night);
   color: var(--color-gray-200);
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 25%, transparent);
+  background: var(--color-blush);
+  color: var(--color-maroon);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--color-tangerine);
   outline-offset: 3px;
   border-radius: 6px;
 }

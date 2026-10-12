@@ -22,7 +22,7 @@ const items = [
   aria-label="Sections"
   class="fixed z-50 left-1/2 -translate-x-1/2 bottom-3 lg:bottom-auto lg:left-4 lg:top-1/2 lg:translate-x-0 lg:-translate-y-1/2"
 >
-  <ul class="flex lg:flex-col items-center gap-0.5 sm:gap-1 rounded-full bg-white/90 dark:bg-[#141c1b]/90 backdrop-blur-md p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-gray-200 dark:ring-white/10">
+  <ul class="flex lg:flex-col items-center gap-0.5 sm:gap-1 rounded-full bg-cream/95 dark:bg-night/90 backdrop-blur-md p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-gray-200 dark:ring-white/10">
     {
       items.map((it) => (
         <li class="relative group">
@@ -50,11 +50,11 @@ const items = [
 <style>
   .dock-link.is-active {
     background: var(--accent);
-    color: white;
+    color: var(--on-accent);
   }
   .dock-link.is-active:hover {
     background: var(--accent);
-    color: white;
+    color: var(--on-accent);
   }
   /* On phones/tablets the active item shows its label, like a segmented control */
   @media (min-width: 640px) and (max-width: 1023px) {

@@ -15,7 +15,7 @@ const principles = siteConfig.principles ?? [];
               <p class="font-mono text-sm text-teal-300">0{i + 1}</p>
               <h3 class="mt-2 text-lg font-bold">{p.title}</h3>
               <p class="mt-2 text-sm leading-relaxed text-gray-300 flex-1">{p.text}</p>
-              {p.proof && (
+              {p.proof?.label && p.proof?.href && (
                 <a href={p.proof.href} class="mt-4 text-sm font-medium text-teal-300 hover:underline underline-offset-2">
                   Example: {p.proof.label} →
                 </a>

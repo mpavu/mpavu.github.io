@@ -1,0 +1,371 @@
+# Pages CMS configuration — edit the portfolio in your browser at https://app.pagescms.org
+# Every field below maps to a key in src/content/site.json.
+# Saving in Pages CMS commits to `main`, and GitHub Actions republishes the site in ~1–2 minutes.
+
+media:
+  input: public/files
+  output: /files
+
+content:
+  - name: portfolio
+    label: Portfolio
+    type: file
+    path: src/content/site.json
+    format: json
+    fields:
+      # ---------- Top of the page ----------
+      - name: name
+        label: Your name
+        type: string
+        required: true
+      - name: title
+        label: Job title
+        type: string
+      - name: tagline
+        label: Tagline (small line under your name)
+        type: string
+      - name: headline
+        label: Headline (one sentence)
+        type: text
+      - name: status
+        label: Status badge
+        type: string
+        description: e.g. "Open to TPM, PM and technical AI roles"
+      - name: location
+        label: Location
+        type: string
+      - name: resume
+        label: CV file (PDF)
+        type: file
+        description: Upload a CV WITHOUT your phone number. Leave empty to hide the Download CV button.
+      - name: description
+        label: Search-engine description
+        type: text
+      - name: siteUrl
+        label: Website address
+        type: string
+        readonly: true
+      - name: social
+        label: Contact links
+        type: object
+        fields:
+          - name: email
+            label: Email
+            type: string
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+          - name: github
+            label: GitHub URL
+            type: string
+
+      # ---------- Impact numbers ----------
+      - name: stats
+        label: Impact numbers (blue band)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{value} {label}"
+        fields:
+          - name: value
+            label: Number
+            type: string
+          - name: label
+            label: Label
+            type: string
+
+      # ---------- Case studies ----------
+      - name: caseStudies
+        label: Case studies
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Title
+            type: string
+          - name: tag
+            label: Category tag
+            type: string
+          - name: metric
+            label: Headline number
+            type: string
+          - name: metricLabel
+            label: What the number means
+            type: string
+          - name: role
+            label: My role
+            type: text
+          - name: flow
+            label: Flow diagram steps (last one is highlighted)
+            type: string
+            list: true
+          - name: problem
+            label: Problem
+            type: text
+          - name: action
+            label: What I did
+            type: text
+          - name: result
+            label: Result
+            type: text
+          - name: learning
+            label: What I learned
+            type: text
+          - name: skills
+            label: Skill chips
+            type: string
+            list: true
+      - name: caseStudyNote
+        label: Note under "Case Studies" (how numbers are estimated)
+        type: text
+
+      # ---------- Coinfluence ----------
+      - name: featuredProject
+        label: Featured project (Coinfluence)
+        type: object
+        fields:
+          - name: tag
+            label: Tag
+            type: string
+          - name: name
+            label: Project name
+            type: string
+          - name: headlineStart
+            label: Headline – start
+            type: string
+          - name: headlineAccent
+            label: Headline – underlined italic word
+            type: string
+          - name: headlineEnd
+            label: Headline – end
+            type: string
+          - name: summary
+            label: Summary
+            type: text
+          - name: stats
+            label: Numbers on the card
+            type: object
+            list: true
+            fields:
+              - name: value
+                label: Number
+                type: string
+              - name: label
+                label: Label
+                type: string
+          - name: features
+            label: Feature bullets
+            type: string
+            list: true
+          - name: decisions
+            label: Product decisions
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: text
+                label: Text
+                type: text
+          - name: stack
+            label: Built with
+            type: string
+            list: true
+          - name: note
+            label: Privacy note
+            type: text
+
+      # ---------- Projects ----------
+      - name: nowBuilding
+        label: Now building
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: status
+            label: Status label
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: link
+            label: Link (optional)
+            type: string
+      - name: projects
+        label: Personal & open-source projects
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: link
+            label: Link
+            type: string
+          - name: skills
+            label: Skill chips
+            type: string
+            list: true
+
+      # ---------- About ----------
+      - name: aboutMe
+        label: About me (one box per paragraph)
+        type: text
+        list: true
+      - name: snapshot
+        label: About – facts table
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: value
+            label: Value
+            type: string
+      - name: principles
+        label: How I work (principles)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: text
+            label: Text
+            type: text
+          - name: proof
+            label: Example link (optional)
+            type: object
+            fields:
+              - name: label
+                label: Link text
+                type: string
+              - name: href
+                label: Link target (e.g. #case-1)
+                type: string
+
+      # ---------- Experience & skills ----------
+      - name: experience
+        label: Experience (newest first)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Job title
+            type: string
+          - name: company
+            label: Company · place
+            type: string
+          - name: dateRange
+            label: Dates
+            type: string
+          - name: bullets
+            label: Bullet points
+            type: text
+            list: true
+      - name: skillGroups
+        label: Skill groups
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Group name
+            type: string
+          - name: items
+            label: Skills
+            type: string
+            list: true
+          - name: proof
+            label: '"Shown in" links'
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Link text
+                type: string
+              - name: href
+                label: Link target (e.g. #case-2)
+                type: string
+
+      # ---------- Education & awards ----------
+      - name: education
+        label: Education
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{degree}"
+        fields:
+          - name: degree
+            label: Degree
+            type: string
+          - name: school
+            label: School
+            type: string
+          - name: dateRange
+            label: Dates
+            type: string
+          - name: achievements
+            label: Details
+            type: string
+            list: true
+      - name: awards
+        label: Awards
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Award
+            type: string
+          - name: org
+            label: Given by
+            type: string
+          - name: year
+            label: Year
+            type: string
+
+      # ---------- Personal ----------
+      - name: beyondWork
+        label: Beyond work
+        type: object
+        fields:
+          - name: intro
+            label: Intro
+            type: text
+          - name: interests
+            label: Interests
+            type: object
+            list: true
+            fields:
+              - name: emoji
+                label: Emoji
+                type: string
+              - name: label
+                label: Label
+                type: string

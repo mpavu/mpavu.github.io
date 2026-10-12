@@ -23,7 +23,7 @@ import Icon from "./Icon.astro";
 
 <script>
   const header = document.getElementById("header");
-  const solid = ["bg-white/80", "dark:bg-[#0b1110]/80", "backdrop-blur-sm", "shadow-sm"];
+  const solid = ["bg-cream/85", "dark:bg-night/85", "backdrop-blur-sm", "shadow-sm"];
   const onScroll = () => {
     if (window.scrollY > 40) header?.classList.add(...solid);
     else header?.classList.remove(...solid);

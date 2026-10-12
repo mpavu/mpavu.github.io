@@ -18,10 +18,10 @@ const groups = siteConfig.skillGroups ?? [];
                   <span class="px-3 py-1.5 bg-gray-100 dark:bg-white/5 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">{s}</span>
                 ))}
               </div>
-              {g.proof && g.proof.length > 0 && (
+              {g.proof && g.proof.filter((p) => p.label && p.href).length > 0 && (
                 <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
                   <span class="font-mono text-xs uppercase tracking-wider mr-1">Shown in</span>
-                  {g.proof.map((p, i) => (
+                  {g.proof.filter((p) => p.label && p.href).map((p, i) => (
                     <>
                       {i > 0 && " · "}
                       <a href={p.href} class="font-medium text-[var(--accent)] dark:text-teal-300 underline-offset-2 hover:underline">{p.label}</a>

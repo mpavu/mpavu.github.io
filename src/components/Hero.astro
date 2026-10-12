@@ -21,8 +21,8 @@ const symbols = [
 
 <div id="hero" class="relative isolate overflow-hidden pt-28 pb-16 md:min-h-screen md:flex md:items-center">
   <div
-    class="absolute inset-0 -z-10"
-    style="background: radial-gradient(ellipse 800px 1200px at 0% 0%, color-mix(in srgb, var(--accent) 25%, transparent) 0%, color-mix(in srgb, var(--accent) 12%, transparent) 25%, transparent 70%)"
+    class="absolute inset-0 -z-10 dark:opacity-20"
+    style="background: radial-gradient(ellipse 760px 900px at 0% 0%, #ffd5fb 0%, rgba(255,213,251,.55) 35%, transparent 70%), radial-gradient(ellipse 700px 600px at 100% 100%, rgba(192,214,255,.8) 0%, transparent 65%)"
   >
   </div>
   <svg
@@ -36,7 +36,7 @@ const symbols = [
       <pattern id="hero-symbols" x="0" y="0" width="400" height="400" patternUnits="userSpaceOnUse">
         {
           symbols.map((p) => (
-            <text x={p.x} y={p.y} fill={siteConfig.accentColor} font-family="monospace" font-size={p.s} transform={`rotate(${p.r})`}>
+            <text x={p.x} y={p.y} fill="#f86c2f" font-family="monospace" font-size={p.s} transform={`rotate(${p.r})`}>
               {p.t}
             </text>
           ))
@@ -57,7 +57,7 @@ const symbols = [
     </p>
 
     <h1 class="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white animate-fade-in animation-delay-200">
-      Hi, I'm <span class="text-[var(--accent)]">{siteConfig.name}</span>
+      Hi, I'm <span class="underline decoration-tangerine decoration-[0.1em] underline-offset-[0.14em]">{siteConfig.name}</span>
     </h1>
     <p class="mt-4 font-mono text-sm sm:text-base text-gray-600 dark:text-gray-400 animate-fade-in animation-delay-200">
       {siteConfig.title} · {siteConfig.tagline}
@@ -67,7 +67,7 @@ const symbols = [
     </p>
 
     <div class="mt-10 flex flex-wrap items-center gap-3 animate-fade-in animation-delay-600">
-      <a href="#work" class="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-90 transition-opacity">
+      <a href="#work" class="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--on-accent)] shadow-sm hover:opacity-90 transition-opacity">
         See case studies <Icon name="arrow" class="h-4 w-4" />
       </a>
       {

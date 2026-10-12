@@ -7,7 +7,7 @@ const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
 
 {
   fp && (
-    <section id="featured" aria-labelledby="featured-title" class="relative overflow-hidden bg-[#f6f7f4] dark:bg-white/[0.02] border-y border-gray-200 dark:border-white/10">
+    <section id="featured" aria-labelledby="featured-title" class="relative overflow-hidden bg-blush dark:bg-white/[0.03] border-y border-gray-200 dark:border-white/10">
       <div class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div class="reveal">
           <p class="inline-flex items-center gap-2 rounded-full bg-[var(--accent)]/10 px-3 py-1 font-mono text-xs text-[var(--accent)] dark:text-teal-300">
@@ -15,7 +15,7 @@ const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
           </p>
           <h2 id="featured-title" class="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-gray-900 dark:text-white">
             <span class="sr-only">{fp.name}: </span>
-            {fp.headlineStart}{" "}<em class="italic text-[var(--accent)] dark:text-teal-300">{fp.headlineAccent}</em>{" "}{fp.headlineEnd}
+            {fp.headlineStart}{" "}<em class="italic underline decoration-tangerine decoration-[0.12em] underline-offset-[0.12em]">{fp.headlineAccent}</em>{" "}{fp.headlineEnd}
           </h2>
           <p class="mt-6 text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-400 max-w-xl">
             <strong class="text-gray-900 dark:text-white">{fp.name}</strong> is {fp.summary.replace(/^A /, "a ")}
@@ -33,7 +33,7 @@ const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
         <div class="reveal relative">
           <div
             class="relative aspect-[4/3.4] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5"
-            style="background: radial-gradient(120% 90% at 85% 10%, #8b8cf0 0%, #5b5fd6 35%, #2d2f8f 70%, #1b1c55 100%)"
+            style="background: radial-gradient(120% 90% at 85% 10%, #f86c2f 0%, #b3260e 38%, #6d0101 72%, #3d0000 100%)"
             role="img"
             aria-label={`Abstract illustration of the ${fp.name} dashboard`}
           >
@@ -42,7 +42,7 @@ const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
                 <path
                   d={`M -20 ${40 + i * 18} C 100 ${-30 + i * 25}, 220 ${300 - i * 12}, 420 ${60 + i * 16}`}
                   fill="none"
-                  stroke="#0b0c3a"
+                  stroke="#2a0000"
                   stroke-width="0.8"
                 />
               ))}
@@ -50,11 +50,11 @@ const bars = [38, 62, 45, 80, 56, 92, 70, 50, 86, 64, 74, 98];
             <div class="absolute left-[8%] right-[8%] top-[9%] rounded-2xl bg-white/10 backdrop-blur-sm ring-1 ring-white/20 p-4">
               <div class="flex items-center justify-between">
                 <span class="font-mono text-[10px] tracking-widest uppercase text-white/70">Spent vs saved · 12 months</span>
-                <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
+                <span class="h-2 w-2 rounded-full bg-sky"></span>
               </div>
               <div class="mt-4 flex items-end gap-1.5 h-28 sm:h-36" aria-hidden="true">
                 {bars.map((h, i) => (
-                  <span class="flex-1 rounded-t-sm" style={`height:${h}%; background: ${i % 3 === 2 ? "rgba(167,243,208,.9)" : "rgba(255,255,255,.55)"}`}></span>
+                  <span class="flex-1 rounded-t-sm" style={`height:${h}%; background: ${i % 3 === 2 ? "#ffd5fb" : "rgba(192,214,255,.85)"}`}></span>
                 ))}
               </div>
             </div>

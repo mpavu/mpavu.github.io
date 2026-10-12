@@ -19,7 +19,7 @@ import SectionHeading from "./SectionHeading.astro";
       <dl class="grid grid-cols-1 sm:grid-cols-2 gap-px overflow-hidden rounded-xl border border-gray-200 dark:border-white/10 bg-gray-200 dark:bg-white/10">
         {
           siteConfig.snapshot.map((row) => (
-            <div class="bg-white dark:bg-[#0f1716] p-4">
+            <div class="bg-white dark:bg-night p-4">
               <dt class="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">{row.label}</dt>
               <dd class="mt-1 font-medium text-gray-900 dark:text-gray-100">{row.value}</dd>
             </div>

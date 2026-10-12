@@ -10,10 +10,14 @@ case studies, an impact band, a "how I work" section, a "beyond work" section, d
 
 ## Edit content
 
-All text lives in [`src/config.ts`](src/config.ts). Remove an array (or empty it) to hide that section.
+All text lives in [`src/content/site.json`](src/content/site.json). Empty a list to hide that section.
 
-- **CV download:** put a PDF in `public/` (without your phone number — the site is public) and set `resume: "/your-file.pdf"`.
-- **Accent colour:** change `accentColor`.
+**Easiest: Pages CMS (no code).** Sign in with GitHub at [app.pagescms.org](https://app.pagescms.org), open this repo and
+choose **Portfolio**. Every section is a form; **Save** commits to `main` and the site republishes in ~1–2 minutes.
+The form layout is defined in [`.pages.yml`](.pages.yml).
+
+- **CV download:** upload a PDF in the *CV file* field (without your phone number — the site is public).
+- **Colours:** the palette (cream, blush, sky, tangerine, maroon) is defined in [`src/styles/global.css`](src/styles/global.css).
 
 ## Run locally
 
