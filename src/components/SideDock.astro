@@ -1,0 +1,114 @@
+---
+// Quick-switch section dock: vertical pill on the left (desktop), bottom pill (mobile).
+// Inspired by elenacalvillo.com.
+import { siteConfig } from "../config";
+import Icon from "./Icon.astro";
+
+const items = [
+  { id: "hero", label: "Home", icon: "home" },
+  { id: "work", label: "Case studies", icon: "briefcase", show: siteConfig.caseStudies?.length },
+  { id: "featured", label: "Coinfluence", icon: "wallet", show: siteConfig.featuredProject },
+  { id: "projects", label: "Projects", icon: "code", show: siteConfig.projects?.length },
+  { id: "about", label: "About", icon: "user" },
+  { id: "experience", label: "Experience", icon: "history", show: siteConfig.experience?.length },
+  { id: "skills", label: "Skills", icon: "tools", show: siteConfig.skillGroups?.length },
+  { id: "beyond", label: "Beyond work", icon: "heart", show: siteConfig.beyondWork },
+  { id: "contact", label: "Contact", icon: "email" },
+].filter((i) => i.show === undefined || i.show) as { id: string; label: string; icon: any }[];
+---
+
+<nav
+  id="dock"
+  aria-label="Sections"
+  class="fixed z-50 left-1/2 -translate-x-1/2 bottom-3 lg:bottom-auto lg:left-4 lg:top-1/2 lg:translate-x-0 lg:-translate-y-1/2"
+>
+  <ul class="flex lg:flex-col items-center gap-0.5 sm:gap-1 rounded-full bg-white/90 dark:bg-[#141c1b]/90 backdrop-blur-md p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] ring-1 ring-gray-200 dark:ring-white/10">
+    {
+      items.map((it) => (
+        <li class="relative group">
+          <a
+            href={`#${it.id}`}
+            data-dock={it.id}
+            aria-label={it.label}
+            class="dock-link flex items-center gap-2 rounded-full p-2 sm:p-2.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
+          >
+            <Icon name={it.icon} class="h-5 w-5 shrink-0" />
+            <span class="dock-label hidden text-xs font-bold uppercase tracking-wider pr-1">{it.label}</span>
+          </a>
+          <span
+            role="tooltip"
+            class="pointer-events-none hidden lg:block absolute left-full top-1/2 -translate-y-1/2 ml-3 whitespace-nowrap rounded-md bg-gray-900 dark:bg-white px-2.5 py-1 text-xs font-medium text-white dark:text-gray-900 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-focus-within:opacity-100 transition-all duration-200"
+          >
+            {it.label}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .dock-link.is-active {
+    background: var(--accent);
+    color: white;
+  }
+  .dock-link.is-active:hover {
+    background: var(--accent);
+    color: white;
+  }
+  /* On phones/tablets the active item shows its label, like a segmented control */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .dock-link.is-active .dock-label {
+      display: inline;
+    }
+    .dock-link.is-active {
+      padding-right: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>(".dock-link"));
+  const sections = links
+    .map((l) => document.getElementById(l.dataset.dock!))
+    .filter((s): s is HTMLElement => !!s);
+
+  const setActive = (id: string) => {
+    links.forEach((l) => {
+      const on = l.dataset.dock === id;
+      l.classList.toggle("is-active", on);
+      if (on) l.setAttribute("aria-current", "true");
+      else l.removeAttribute("aria-current");
+    });
+  };
+
+  // The active section is the last one whose top has passed 40% of the viewport
+  const update = () => {
+    const line = window.innerHeight * 0.4;
+    let current = sections[0]?.id;
+    for (const s of sections) {
+      if (s.getBoundingClientRect().top <= line) current = s.id;
+    }
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      current = sections[sections.length - 1]?.id;
+    }
+    if (current) setActive(current);
+  };
+
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          update();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
+  window.addEventListener("resize", update);
+  update();
+</script>

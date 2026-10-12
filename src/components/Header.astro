@@ -1,68 +1,24 @@
 ---
 import { siteConfig } from "../config";
 import Icon from "./Icon.astro";
-
-const links = [
-  { href: "#work", label: "Work", show: siteConfig.caseStudies?.length },
-  { href: "#featured", label: "Coinfluence", show: siteConfig.featuredProject },
-  { href: "#projects", label: "Projects", show: siteConfig.projects?.length },
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience", show: siteConfig.experience?.length },
-  { href: "#skills", label: "Skills", show: siteConfig.skillGroups?.length },
-  { href: "#beyond", label: "Beyond work", show: siteConfig.beyondWork },
-  { href: "#contact", label: "Contact" },
-].filter((l) => l.show === undefined || l.show);
+// Section navigation lives in SideDock.astro; the header only holds the logo and theme toggle.
 ---
 
-<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <nav class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-4 flex items-center justify-between gap-6" aria-label="Main">
+<header id="header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-4 flex items-center justify-between gap-6">
     <a href="#hero" class="font-mono text-sm font-medium text-gray-900 dark:text-white">
       {siteConfig.name.split(" ").map((p) => p[0]).join("")}<span class="text-[var(--accent)]">.</span>
     </a>
-    <ul class="hidden md:flex items-center gap-6 lg:gap-8">
-      {
-        links.map((l) => (
-          <li>
-            <a href={l.href} class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
-              {l.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <div class="flex items-center gap-2">
-      <button
-        id="theme-toggle"
-        type="button"
-        aria-label="Toggle dark mode"
-        class="p-2 rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10 transition-colors"
-      >
-        <Icon name="moon" class="h-5 w-5 dark:hidden" />
-        <Icon name="sun" class="h-5 w-5 hidden dark:block" />
-      </button>
-      <button
-        id="menu-toggle"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
-      >
-        <Icon name="menu" class="h-5 w-5" />
-      </button>
-    </div>
-  </nav>
-  <ul id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-1 bg-white/95 dark:bg-[#0b1110]/95 backdrop-blur-sm border-b border-gray-200 dark:border-white/10">
-    {
-      links.map((l) => (
-        <li>
-          <a href={l.href} class="block py-2 text-base font-medium text-gray-700 dark:text-gray-200">
-            {l.label}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Toggle dark mode"
+      class="p-2 rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10 transition-colors"
+    >
+      <Icon name="moon" class="h-5 w-5 dark:hidden" />
+      <Icon name="sun" class="h-5 w-5 hidden dark:block" />
+    </button>
+  </div>
 </header>
 
 <script>
@@ -81,18 +37,4 @@ const links = [
       localStorage.setItem("theme", dark ? "dark" : "light");
     } catch (e) {}
   });
-
-  const menuBtn = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
-  menuBtn?.addEventListener("click", () => {
-    const open = menu?.classList.toggle("hidden") === false;
-    menuBtn.setAttribute("aria-expanded", String(open));
-    if (open) header?.classList.add(...solid);
-  });
-  menu?.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => {
-      menu.classList.add("hidden");
-      menuBtn?.setAttribute("aria-expanded", "false");
-    }),
-  );
 </script>
