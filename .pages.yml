@@ -382,6 +382,19 @@ content:
           - name: languages
             label: Languages I speak
             type: string
+          - name: personality
+            label: Personality (MBTI)
+            type: object
+            fields:
+              - name: type
+                label: Type (e.g. ENFJ-A; empty hides the card)
+                type: string
+              - name: name
+                label: Name
+                type: string
+              - name: description
+                label: One-line description
+                type: text
           - name: interests
             label: Interests
             type: object

@@ -602,7 +602,12 @@
         "alt": ""
       }
     ],
-    "languages": "English, Tamil, Hindi and German (learning)"
+    "languages": "English, Tamil, Hindi and German (learning)",
+    "personality": {
+      "type": "ENFJ-A",
+      "name": "The Protagonist · Assertive",
+      "description": "People-first and energised by helping teams grow, which is probably why coaching is my favourite part of the job."
+    }
   },
   "projectCategories": [
     "AI",

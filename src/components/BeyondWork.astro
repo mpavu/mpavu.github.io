@@ -8,6 +8,7 @@ const base = import.meta.env.BASE_URL;
 const photos = beyond?.photos ?? [];
 const currently = (beyond?.currently ?? []).filter((c) => c.label || c.value);
 const interests = beyond?.interests ?? [];
+const personality = beyond?.personality?.type ? beyond.personality : null;
 const src = (path: string) => (/^https?:\/\//.test(path) ? path : `${base}${path.replace(/^\//, "")}`);
 // Placeholder tints cycle through the palette
 const tints = ["bg-blush", "bg-sky", "bg-gray-100", "bg-blush"];
@@ -71,8 +72,19 @@ const tints = ["bg-blush", "bg-sky", "bg-gray-100", "bg-blush"];
           </div>
         )}
 
+        {personality && (
+          <div class="reveal order-4 col-span-2 flex flex-col justify-between gap-3 rounded-2xl bg-sky p-6 text-maroon">
+            <p class="font-mono text-xs uppercase tracking-widest">Personality · MBTI</p>
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <p class="font-serif text-5xl leading-none">{personality.type}</p>
+              {personality.name && <p class="font-bold">{personality.name}</p>}
+            </div>
+            {personality.description && <p class="text-sm leading-relaxed">{personality.description}</p>}
+          </div>
+        )}
+
         {interests.length > 0 && (
-          <div class="reveal order-5 col-span-2 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-6">
+          <div class="reveal order-5 col-span-2 lg:col-span-4 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-6">
             <p class="font-mono text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">Things I love</p>
             <ul class="mt-4 flex flex-wrap gap-2">
               {interests.map((it) => (
