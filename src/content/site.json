@@ -2,12 +2,11 @@
   "name": "Pavitra Murugesan",
   "title": "Manufacturing AI Manager at Procter & Gamble",
   "tagline": "Industrial AI · MLOps · Edge AI · Global AI Program Leadership",
-  "headline": "I take manufacturing AI from proof of concept to production, then make it repeatable.",
-  "description": "Pavitra Murugesan — Manufacturing AI Manager at Procter & Gamble. Scaling industrial AI, MLOps and edge AI across 18+ plants and 11+ business units.",
-  "location": "Frankfurt am Main, Germany",
+  "headline": "Turning AI breakthroughs into factory-floor reality.",
   "status": "Open to TPM, PM and technical AI roles",
+  "location": "Frankfurt am Main, Germany",
+  "description": "Pavitra Murugesan — Manufacturing AI Manager at Procter & Gamble. Scaling industrial AI, MLOps and edge AI across 18+ plants and 11+ business units.",
   "siteUrl": "https://mpavu.github.io",
-  "resume": "",
   "social": {
     "email": "pavitra.murugesan@gmail.com",
     "linkedin": "https://www.linkedin.com/in/pavitra-murugesan",
@@ -31,42 +30,12 @@
       "label": "practitioners trained & coached"
     }
   ],
-  "aboutMe": [
-    "I work where manufacturing meets AI. At Procter & Gamble's Kronberg Innovation Center I lead the scaling of manufacturing AI across a global plant network — anomaly detection, predictive maintenance, soft sensors, touchless quality and closed-loop control — from use-case definition to production deployment and adoption.",
-    "I care less about the model and more about what makes it last: reusable deployment patterns, MLOps from cloud to PLC, and coaching that turns engineers into AI practitioners."
-  ],
-  "snapshot": [
-    {
-      "label": "Role",
-      "value": "Manufacturing AI Manager, P&G"
-    },
-    {
-      "label": "Focus",
-      "value": "Industrial AI, MLOps, Edge AI, GenAI"
-    },
-    {
-      "label": "Experience",
-      "value": "4+ years in industrial data science & AI"
-    },
-    {
-      "label": "Based in",
-      "value": "Frankfurt am Main, Germany"
-    },
-    {
-      "label": "Education",
-      "value": "M.Eng. Automation & IT, TH Köln"
-    },
-    {
-      "label": "Languages",
-      "value": "English (C2), Tamil, Hindi, German (A2)"
-    }
-  ],
   "caseStudies": [
     {
+      "name": "Anomaly detection as a reusable capability",
       "tag": "Predictive maintenance",
       "metric": "~$5.8M",
       "metricLabel": "estimated value · single-site business case",
-      "name": "Anomaly detection as a reusable capability",
       "role": "Owner of the deployment approach and coach to site project teams; sites built and ran their own projects.",
       "flow": [
         "Historian & sensor data",
@@ -87,10 +56,10 @@
       ]
     },
     {
+      "name": "Touchless quality: replacing manual sampling",
       "tag": "Quality",
       "metric": "~$2M",
       "metricLabel": "estimated value per implementation",
-      "name": "Touchless quality: replacing manual sampling",
       "role": "Set up the ML approach and led alignment with the quality organisation, delivered with site and data teams.",
       "flow": [
         "Line process data",
@@ -111,10 +80,10 @@
       ]
     },
     {
+      "name": "WISE Coach Qualification (WCQ) program",
       "tag": "Capability building",
       "metric": "200+",
       "metricLabel": "practitioners enabled",
-      "name": "WISE Coach Qualification (WCQ) program",
       "role": "Global program lead: content, coaching frameworks and session facilitation.",
       "flow": [
         "Real plant problem",
@@ -135,10 +104,10 @@
       ]
     },
     {
+      "name": "RapidMLOps: ML from Excel-like tools to the PLC",
       "tag": "Master thesis · MLOps",
       "metric": "3",
       "metricLabel": "PLC vendor families supported (Siemens, Rockwell, Mitsubishi)",
-      "name": "RapidMLOps: ML from Excel-like tools to the PLC",
       "role": "Designed and built the framework as my master thesis and led the production-line pilot.",
       "flow": [
         "JMP model",
@@ -206,150 +175,205 @@
       "pytest",
       "GitHub Actions"
     ],
-    "note": "The source is private because it handles personal financial data. Happy to demo it live.",
-    "categories": []
+    "note": "The source is private because it handles personal financial data. Happy to demo it live."
   },
+  "projectCategories": [
+    "AI",
+    "ML",
+    "IoT"
+  ],
   "projects": [
     {
       "name": "Agentic AI for manufacturing operations",
-      "status": "Exploring",
       "description": "Evaluating Generative AI and agent-based applications for plant operations with technology partners.",
-      "link": "",
+      "status": "Exploring",
+      "categories": [
+        "AI"
+      ],
       "skills": [
         "GenAI",
         "Agents"
-      ],
-      "categories": [
-        "AI"
       ]
     },
     {
       "name": "RapidMLOps",
-      "status": "Thesis",
       "description": "My master thesis: a framework that takes ML models from JMP to PLC-connected edge devices for closed-loop control. Read the case study.",
+      "status": "Thesis",
+      "categories": [
+        "ML",
+        "IoT"
+      ],
       "link": "#case-4",
       "skills": [
         "Azure ML",
         "OPC UA",
         "MQTT"
-      ],
-      "categories": [
-        "ML",
-        "IoT"
       ]
     },
     {
       "name": "Claude Slides",
-      "status": "",
       "description": "Ready-to-use AI slide-creation setup for GitHub Copilot and other coding agents.",
+      "categories": [
+        "AI"
+      ],
       "link": "https://github.com/mpavu/Claude_Slides",
       "skills": [
         "GenAI",
         "Coding agents"
-      ],
-      "categories": [
-        "AI"
       ]
     },
     {
       "name": "Handwritten character recognition",
-      "status": "",
       "description": "CNN-based handwritten character recognition built with Keras and TensorFlow.",
+      "categories": [
+        "AI",
+        "ML"
+      ],
       "link": "https://github.com/mpavu/Hand-written-character-recognization",
       "skills": [
         "Python",
         "Keras",
         "CNN"
-      ],
-      "categories": [
-        "AI",
-        "ML"
       ]
     },
     {
       "name": "Car number plate detection",
-      "status": "",
       "description": "Image-processing pipeline in MATLAB that detects and reads vehicle number plates for ANPR.",
+      "categories": [
+        "AI"
+      ],
       "link": "https://github.com/mpavu/car-number-plate-detection-using-matlab",
       "skills": [
         "MATLAB",
         "Computer vision"
-      ],
-      "categories": [
-        "AI"
       ]
     },
     {
       "name": "Automatic irrigation with farmer alerts",
-      "status": "",
       "description": "Arduino system with soil-moisture and ultrasonic sensors that drives two pumps and texts the farmer whenever pump status changes.",
+      "categories": [
+        "IoT"
+      ],
       "link": "https://github.com/mpavu/Automatic-irrigation-system-with-notification-to-the-farmer",
       "skills": [
         "Arduino",
         "C++",
         "Sensors"
-      ],
-      "categories": [
-        "IoT"
       ]
     },
     {
       "name": "Fire alert system",
-      "status": "",
       "description": "Detects fire and sends an alert message, built on an 8051 microcontroller and simulated in Proteus and Keil.",
+      "categories": [
+        "IoT"
+      ],
       "link": "https://github.com/mpavu/fire-alert-system",
       "skills": [
         "8051",
         "Proteus",
         "Keil"
-      ],
-      "categories": [
-        "IoT"
       ]
     },
     {
       "name": "Automatic street light controller",
-      "status": "",
       "description": "Switches street lights on and off automatically using sensors; built with Keil and Proteus.",
+      "categories": [
+        "IoT"
+      ],
       "link": "https://github.com/mpavu/Automatic-street-light-controller",
       "skills": [
         "Sensors",
         "Keil",
         "Proteus"
-      ],
-      "categories": [
-        "IoT"
       ]
     },
     {
       "name": "Smart stick: obstacle & water detector",
-      "status": "",
       "description": "Assistive walking stick with sensors that detect obstacles and water.",
+      "categories": [
+        "IoT"
+      ],
       "link": "https://github.com/mpavu/Blind_stick_obstace-water_detector",
       "skills": [
         "C++",
         "Sensors"
-      ],
-      "categories": [
-        "IoT"
       ]
     },
     {
       "name": "This portfolio",
-      "status": "Live",
       "description": "Open-source, built with Astro and Tailwind CSS on top of the DevPortfolio template, hosted on GitHub Pages and edited with Pages CMS.",
+      "status": "Live",
       "link": "https://github.com/mpavu/mpavu.github.io",
       "skills": [
         "Astro",
         "Tailwind CSS"
-      ],
-      "categories": []
+      ]
+    }
+  ],
+  "aboutMe": [
+    "I work where manufacturing meets AI. At Procter & Gamble's Kronberg Innovation Center I lead the scaling of manufacturing AI across a global plant network — anomaly detection, predictive maintenance, soft sensors, touchless quality and closed-loop control — from use-case definition to production deployment and adoption.",
+    "I care less about the model and more about what makes it last: reusable deployment patterns, MLOps from cloud to PLC, and coaching that turns engineers into AI practitioners."
+  ],
+  "snapshot": [
+    {
+      "label": "Role",
+      "value": "Manufacturing AI Manager, P&G"
+    },
+    {
+      "label": "Focus",
+      "value": "Industrial AI, MLOps, Edge AI, GenAI"
+    },
+    {
+      "label": "Experience",
+      "value": "4+ years in industrial data science & AI"
+    },
+    {
+      "label": "Based in",
+      "value": "Frankfurt am Main, Germany"
+    },
+    {
+      "label": "Education",
+      "value": "M.Eng. Automation & IT, TH Köln"
+    },
+    {
+      "label": "Languages",
+      "value": "English (C2), Tamil, Hindi, German (A2)"
+    }
+  ],
+  "principles": [
+    {
+      "title": "Plan with intention, adapt with ease",
+      "text": "Clear goals, short loops, and the flexibility to change course when the data says so."
+    },
+    {
+      "title": "Pilot to production",
+      "text": "A use case isn't done until it runs on the line and someone owns it.",
+      "proof": {
+        "label": "RapidMLOps line pilot",
+        "href": "#case-4"
+      }
+    },
+    {
+      "title": "Build once, reapply everywhere",
+      "text": "Templates and patterns that let the next site go live in a fraction of the effort.",
+      "proof": {
+        "label": "Anomaly-detection template",
+        "href": "#case-1"
+      }
+    },
+    {
+      "title": "People before platforms",
+      "text": "Adoption is a people problem. Coaching and community make technology stick.",
+      "proof": {
+        "label": "WCQ program",
+        "href": "#case-3"
+      }
     }
   ],
   "experience": [
     {
-      "company": "Procter & Gamble · Kronberg Innovation Center",
       "title": "Manufacturing AI Manager (WISE – Intelligent Control Automation Platform)",
+      "company": "Procter & Gamble · Kronberg Innovation Center",
       "dateRange": "Apr 2024 – Present",
       "bullets": [
         "Lead the scaling of manufacturing AI across P&G's global plant network; coached 55+ use cases across 11+ business units and 18+ sites (~$15M+ estimated single-instance value, ~$38M+ identified opportunity).",
@@ -358,16 +382,16 @@
       ]
     },
     {
-      "company": "Procter & Gamble · Kronberg (thesis with TH Köln)",
       "title": "Master Thesis Student & Intern – Manufacturing MLOps",
+      "company": "Procter & Gamble · Kronberg (thesis with TH Köln)",
       "dateRange": "May 2023 – Feb 2024",
       "bullets": [
         "Built RapidMLOps, a framework to take ML models from JMP to PLC-connected edge devices, and led its production-line pilot (case study 04)."
       ]
     },
     {
-      "company": "Aptiv GmbH · Wiehl",
       "title": "Working Student – Data Science, Sensor Systems",
+      "company": "Aptiv GmbH · Wiehl",
       "dateRange": "Oct 2022 – Mar 2023",
       "bullets": [
         "Signal processing and optimisation in MATLAB for a vehicle breakage alarm-sensor system.",
@@ -375,8 +399,8 @@
       ]
     },
     {
-      "company": "Remark Skill Education · Decibel's Lab · Delhi",
       "title": "Internships – Data Science & Control Systems",
+      "company": "Remark Skill Education · Decibel's Lab · Delhi",
       "dateRange": "2020 – 2021",
       "bullets": [
         "CNN-based handwritten character recognition; numerical modelling and simulation of vehicle and drone systems."
@@ -462,6 +486,26 @@
       ]
     }
   ],
+  "education": [
+    {
+      "degree": "M.Eng. Automation and IT",
+      "school": "TH Köln – Cologne University of Applied Sciences",
+      "dateRange": "Oct 2021 – Feb 2024",
+      "achievements": [
+        "Industrial IoT & MES, industrial communication, IT security, data science",
+        "Deutschlandstipendium scholar"
+      ]
+    },
+    {
+      "degree": "B.Sc. (Hons) Instrumentation",
+      "school": "University of Delhi",
+      "dateRange": "Jul 2017 – Jul 2020",
+      "achievements": [
+        "Control systems, embedded systems, robotics",
+        "Academic awards (1st and 3rd position)"
+      ]
+    }
+  ],
   "awards": [
     {
       "name": "CEO Award",
@@ -480,62 +524,49 @@
     },
     {
       "name": "Academic Awards (1st & 3rd position)",
-      "org": "University of Delhi",
-      "year": ""
-    }
-  ],
-  "education": [
-    {
-      "school": "TH Köln – Cologne University of Applied Sciences",
-      "degree": "M.Eng. Automation and IT",
-      "dateRange": "Oct 2021 – Feb 2024",
-      "achievements": [
-        "Industrial IoT & MES, industrial communication, IT security, data science",
-        "Deutschlandstipendium scholar"
-      ]
-    },
-    {
-      "school": "University of Delhi",
-      "degree": "B.Sc. (Hons) Instrumentation",
-      "dateRange": "Jul 2017 – Jul 2020",
-      "achievements": [
-        "Control systems, embedded systems, robotics",
-        "Academic awards (1st and 3rd position)"
-      ]
-    }
-  ],
-  "principles": [
-    {
-      "title": "Plan with intention, adapt with ease",
-      "text": "Clear goals, short loops, and the flexibility to change course when the data says so."
-    },
-    {
-      "title": "Pilot to production",
-      "text": "A use case isn't done until it runs on the line and someone owns it.",
-      "proof": {
-        "label": "RapidMLOps line pilot",
-        "href": "#case-4"
-      }
-    },
-    {
-      "title": "Build once, reapply everywhere",
-      "text": "Templates and patterns that let the next site go live in a fraction of the effort.",
-      "proof": {
-        "label": "Anomaly-detection template",
-        "href": "#case-1"
-      }
-    },
-    {
-      "title": "People before platforms",
-      "text": "Adoption is a people problem. Coaching and community make technology stick.",
-      "proof": {
-        "label": "WCQ program",
-        "href": "#case-3"
-      }
+      "org": "University of Delhi"
     }
   ],
   "beyondWork": {
     "intro": "Outside work I'm curious about where IoT, growth and futuristic AI are heading — and I like learning in public and helping others get started with AI.",
+    "photos": [
+      {
+        "caption": "On the road"
+      },
+      {
+        "caption": "Race day"
+      },
+      {
+        "caption": "In the kitchen"
+      },
+      {
+        "caption": "Award moment"
+      }
+    ],
+    "currently": [
+      {
+        "label": "Learning",
+        "value": "German, A2 and climbing"
+      },
+      {
+        "label": "Building",
+        "value": "Coinfluence, my household finance dashboard"
+      },
+      {
+        "label": "Exploring",
+        "value": "Agentic AI for the factory floor"
+      },
+      {
+        "label": "Coaching",
+        "value": "A global community of AI practitioners"
+      }
+    ],
+    "languages": "English, Tamil, Hindi and German (learning)",
+    "personality": {
+      "type": "ENFJ-A",
+      "name": "The Protagonist · Assertive",
+      "description": "People-first and energised by helping teams grow, which is probably why coaching is my favourite part of the job."
+    },
     "interests": [
       {
         "emoji": "✈️",
@@ -561,57 +592,6 @@
         "emoji": "🤖",
         "label": "Futuristic AI"
       }
-    ],
-    "currently": [
-      {
-        "label": "Learning",
-        "value": "German, A2 and climbing"
-      },
-      {
-        "label": "Building",
-        "value": "Coinfluence, my household finance dashboard"
-      },
-      {
-        "label": "Exploring",
-        "value": "Agentic AI for the factory floor"
-      },
-      {
-        "label": "Coaching",
-        "value": "A global community of AI practitioners"
-      }
-    ],
-    "photos": [
-      {
-        "image": "",
-        "caption": "On the road",
-        "alt": ""
-      },
-      {
-        "image": "",
-        "caption": "Race day",
-        "alt": ""
-      },
-      {
-        "image": "",
-        "caption": "In the kitchen",
-        "alt": ""
-      },
-      {
-        "image": "",
-        "caption": "Award moment",
-        "alt": ""
-      }
-    ],
-    "languages": "English, Tamil, Hindi and German (learning)",
-    "personality": {
-      "type": "ENFJ-A",
-      "name": "The Protagonist · Assertive",
-      "description": "People-first and energised by helping teams grow, which is probably why coaching is my favourite part of the job."
-    }
-  },
-  "projectCategories": [
-    "AI",
-    "ML",
-    "IoT"
-  ]
+    ]
+  }
 }
