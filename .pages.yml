@@ -87,6 +87,9 @@ content:
           - name: name
             label: Title
             type: string
+          - name: id
+            label: Link name (short, no spaces, e.g. ai-x; other sections link to it as #ai-x)
+            type: string
           - name: tag
             label: Category tag
             type: string
@@ -212,7 +215,7 @@ content:
             type: string
             list: true
           - name: link
-            label: Link (web address, or #case-1 for a case study)
+            label: Link (web address, or a case study link such as #ai-x)
             type: string
           - name: skills
             label: Skill chips
@@ -257,7 +260,7 @@ content:
                 label: Link text
                 type: string
               - name: href
-                label: Link target (e.g. #case-1)
+                label: Link target (e.g. #anomaly-detection)
                 type: string
 
       # ---------- Experience & skills ----------
@@ -306,7 +309,7 @@ content:
                 label: Link text
                 type: string
               - name: href
-                label: Link target (e.g. #case-2)
+                label: Link target (e.g. #wcq)
                 type: string
 
       # ---------- Education & awards ----------

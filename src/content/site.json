@@ -32,11 +32,39 @@
   ],
   "caseStudies": [
     {
+      "id": "smart-lines",
+      "name": "Smart Self-Improving Lines: turning one-off AI wins into repeatable playbooks",
+      "tag": "Ongoing · Agentic AI · Scale-up",
+      "metric": "3",
+      "metricLabel": "proven solutions in reapplication (filling, labelling, capping)",
+      "role": "Drove the concept end-to-end: defined the Common Best Approach, aligned business and technical stakeholders, and partnered with sites to select lead and demo lines.",
+      "flow": [
+        "Successful pilot",
+        "Common Best Approach",
+        "Readiness check",
+        "Demo site",
+        "Scale across lines & sites"
+      ],
+      "problem": "Successful manufacturing AI pilots existed, but scaling them to other lines and sites depended on knowledge held by a few people: technical know-how, infrastructure readiness, configuration details and deployment steps. We started with the problems behind the largest share of scrap, such as filling and labelling.",
+      "action": "Developed the Common Best Approach (CBA) concept to capture proven solutions end-to-end for reapplication, and structured technical readiness around SmartBox, AI Inference Server, GitHub, connectivity, automation-platform requirements, ownership and site roles. Introduced AI agents to document solutions and generate step-by-step workflows for repeatable tasks, so the playbook improves with every deployment. Collaborated with business and site stakeholders to identify lead and demo sites that prove a solution delivers value beyond its original line.",
+      "result": "Established a reusable path from successful pilot → documented standard → demonstration site → broader scale. Perfect Fill and the PE labeler became the first concrete applications of the approach, with cappers next.",
+      "learning": "A pilot isn't a product until someone else can run it without you. Write the playbook while the knowledge is still fresh.",
+      "skills": [
+        "Agentic AI",
+        "Knowledge management",
+        "Scale-up strategy",
+        "Stakeholder alignment",
+        "SmartBox",
+        "AI Inference Server"
+      ]
+    },
+    {
+      "id": "anomaly-detection",
       "name": "Anomaly detection: catching the failures you have never seen",
       "tag": "Predictive maintenance · Quality",
       "metric": "15",
       "metricLabel": "use cases running on one standard approach",
-      "role": "Owner of the deployment approach and coach to site project teams; sites built and ran their own projects.",
+      "role": "Owned the deployment approach end-to-end and coached site project teams, collaborating with maintenance, quality and engineering stakeholders while sites built and ran their own projects.",
       "flow": [
         "Machine & process signals",
         "Off-the-shelf app on Industrial Edge",
@@ -45,22 +73,79 @@
         "Reused across use cases"
       ],
       "problem": "Unplanned stops were costing production time, and there was no standard way to detect anomalies across many signals and processes. Predictive models hit a basic blocker: failures are rare, so there were never enough labelled examples to train a supervised model.",
-      "action": "Standardised on an off-the-shelf anomaly-detection app on Siemens Industrial Edge built on unsupervised models. Instead of learning what a failure looks like, it learns what normal looks like, so it can flag unforeseen and rare, high-impact events without labelled failure data, making it a practical starting point for any line.",
+      "action": "Standardised on an off-the-shelf anomaly-detection app on Siemens Industrial Edge built on unsupervised models. Instead of learning what a failure looks like, it learns what normal looks like, so it can flag unforeseen and rare, high-impact events without labelled failure data, making it a practical starting point for any line. Drove adoption by partnering with site teams on each pilot and turning every success into a reusable, scalable deployment pattern.",
       "result": "Piloted first on a one-off breakage that had cost millions: the model surfaced the failure in the data, and an induced-failure test confirmed it. The next use case was a frequent defect in moulding, where the model raised accurate alerts within one day of deployment, which won the teams' confidence. It now runs across 15 use cases.",
       "learning": "When failures are rare, stop waiting for labels. Teach the model what normal looks like and let it tell you when something isn't.",
       "skills": [
         "Unsupervised ML",
         "Anomaly detection",
         "Siemens Industrial Edge",
-        "Time series"
+        "Time series",
+        "Scalable deployment",
+        "Stakeholder management"
       ]
     },
     {
+      "id": "ai-x",
+      "name": "AI-X: removing the entry barrier from model to machine",
+      "tag": "Product development · MLOps · Edge AI",
+      "metric": "6",
+      "metricLabel": "business units using AI-X",
+      "role": "Conceived, built and owned AI-X as an internal product end-to-end, from first prototype on a production line to the standard packaging route; worked with business stakeholders and IT to drive adoption.",
+      "flow": [
+        "Develop",
+        "Test",
+        "IT compliance",
+        "Lifecycle maintenance",
+        "Scale"
+      ],
+      "problem": "Building an ML model was never the slow part; getting it onto the machine was. Every model had to be hand-fitted to the Siemens Industrial Edge SDK, which took as long as developing it, and the work came back after every retrain. Deployments slipped and adoption stalled.",
+      "action": "Mapped exactly which parts of the SDK change from model to model and built a model-agnostic skeleton around them. Engineers describe their Python ML model in a few text inputs and a CI/CD pipeline on GitHub Actions produces the deployment package end-to-end. Applied DevOps practices throughout: pytest unit tests, standard pre- and post-processing quality gates, SonarQube scans for IT compliance, application registration, and built-in tracking of performance, usage and user reception. Collaborated with IT, site engineers and data scientists to make it the default route.",
+      "result": "A stable production solution that now packages most of the models we deploy to the edge. Retraining no longer means a new deployment project: updates ship through the same pipeline, cutting time-to-production and lowering the entry barrier for new teams.",
+      "learning": "Automate the part everyone repeats, not the part everyone notices.",
+      "skills": [
+        "CI/CD",
+        "DevOps",
+        "GitHub Actions",
+        "pytest",
+        "SonarQube",
+        "Siemens Industrial Edge",
+        "Product ownership"
+      ]
+    },
+    {
+      "id": "wcq",
+      "name": "WISE Coach Qualification (WCQ): the real power is people",
+      "tag": "Capability building · Change management",
+      "metric": "200+",
+      "metricLabel": "practitioners trained & coached",
+      "role": "Program lead: shaped the regional technical qualification, designed the learning journeys and facilitated sessions across regions.",
+      "flow": [
+        "Capability mapping",
+        "Tailored learning journey",
+        "Real use case",
+        "MVP",
+        "Deployed & adopted"
+      ],
+      "problem": "Scaling manufacturing AI needs people across regions who can spot valuable use cases, understand the architecture and tools, and support deployment, not just a central technical team. Great solutions only create value when people adopt and use them, so investing in capability is how AI delivers business results.",
+      "action": "Helped structure the regional WISE technical qualification and training. Mapped participant capability across Python, JMP and SmartBox, and built the learning journey around architecture, SmartBox, anomaly detection, hands-on tool usage and use-case/MVP development. Adapted delivery to regional availability and mixed skill levels, collaborating with regional leads and subject-matter experts.",
+      "result": "Created a practical capability-building approach that works for coders and non-coders alike, using tools such as JMP, and tied training directly to real manufacturing use cases and MVPs instead of theory. The program has supported 55+ coached use cases across 11+ business units.",
+      "learning": "Learning sticks when it ships. Tie every cohort to a production problem with an owner.",
+      "skills": [
+        "Program leadership",
+        "Capability building",
+        "Change management",
+        "Training design",
+        "Cross-regional collaboration"
+      ]
+    },
+    {
+      "id": "touchless-quality",
       "name": "Touchless quality: replacing manual sampling",
       "tag": "Quality",
       "metric": "~$2M",
       "metricLabel": "estimated value per implementation",
-      "role": "Set up the ML approach and led alignment with the quality organisation, delivered with site and data teams.",
+      "role": "Set up the ML approach and led cross-functional alignment with the quality organisation, delivered together with site and data teams.",
       "flow": [
         "Line process data",
         "Cloud ML (Azure)",
@@ -69,77 +154,16 @@
         "Scale-up"
       ],
       "problem": "Product quality was checked through manual sampling — slow, labour-intensive and blind between samples.",
-      "action": "Established a cloud ML approach for continuous quality prediction and worked with the quality organisation on validation and acceptance criteria.",
+      "action": "Drove a cloud ML approach for continuous quality prediction end-to-end, from data to model to acceptance, and partnered with the quality organisation and site teams to define validation and acceptance criteria.",
       "result": "Secured quality-organisation acceptance for scale-up, with ~$12M of identified opportunity across further lines.",
       "learning": "In regulated domains the hardest part is trust. Bring the quality team in at the start, not at sign-off.",
       "skills": [
         "Azure ML",
         "Soft sensors",
         "Validation",
+        "Cross-functional leadership",
         "Stakeholder management"
       ]
-    },
-    {
-      "name": "WISE Coach Qualification (WCQ) program",
-      "tag": "Capability building",
-      "metric": "200+",
-      "metricLabel": "practitioners enabled",
-      "role": "Global program lead: content, coaching frameworks and session facilitation.",
-      "flow": [
-        "Real plant problem",
-        "Coaching & learning journey",
-        "AI-X templates",
-        "Deployed solution",
-        "Community of practice"
-      ],
-      "problem": "AI training was happening, but it rarely turned into deployed solutions on the plant floor.",
-      "action": "Lead the global WCQ program: learning journeys, coaching frameworks, global sessions and cross-site communities of practice, each tied to a real use case. Created AI-X templates so engineers can build and deploy AI without deep data-science support.",
-      "result": "Turned training into a capability engine — 55+ coached use cases across 11+ business units, with self-serve AI patterns adopted in 6 business units.",
-      "learning": "Learning sticks when it ships. Tie every cohort to a production problem with an owner.",
-      "skills": [
-        "Program leadership",
-        "Coaching",
-        "Change management",
-        "Community building"
-      ]
-    },
-    {
-      "name": "AI-X: from any ML model to an edge-ready package",
-      "tag": "MLOps · Edge AI",
-      "metric": "6",
-      "metricLabel": "business units using AI-X",
-      "role": "Designed and built AI-X, from first prototype on a production line to the standard packaging route.",
-      "flow": [
-        "Model + simple text inputs",
-        "GitHub Actions",
-        "Tests & SonarQube",
-        "Deployment package",
-        "Siemens Industrial Edge"
-      ],
-      "problem": "Building an ML model was never the slow part; getting it onto the machine was. Every model had to be hand-fitted to the Siemens Industrial Edge SDK, which took as long as developing it, and the work came back after every retrain. Deployments slipped and adoption stalled.",
-      "action": "Mapped exactly which parts of the SDK change from model to model and built a model-agnostic skeleton around them. Engineers describe their model in a few text inputs and a GitHub Actions workflow produces the deployment package, with pytest unit tests, standard pre- and post-processing checks, SonarQube code-quality scans, application registration and built-in tracking of performance and usage.",
-      "result": "A stable production solution that now packages most of the models we deploy to the edge. Retraining no longer means a new deployment project: updates ship through the same pipeline.",
-      "learning": "Automate the part everyone repeats, not the part everyone notices.",
-      "skills": [
-        "GitHub Actions",
-        "Siemens Industrial Edge",
-        "pytest",
-        "SonarQube",
-        "Python"
-      ]
-    },
-    {
-      "name": "AI-X Removing Entry Barrier",
-      "tag": "Product Development and Management",
-      "role": "Developed a CI/CD pipeline for packaging my python language based ML models for edge deployment .",
-      "flow": [
-        "Develop",
-        "Test",
-        "IT compliance",
-        "Lifecycle maintance",
-        "scale"
-      ],
-      "problem": "The effort of packaging model is equal to deploying model.\nMostly people somehow develop ML model for production but the journey to deploy takes equal time intensive. Mostly , we have siemens industrial edge and to deploy on to it, there is SDK which you adapt to your model to run on the edge. I took the SDK and found where the areas that changes and what is it needed to adapt. Took the info created a skeleton that can fit any ML model through simple text inputs to the workflow and github action based on the input produces the final deployment package. \n\nIt has a lot of pytest and unit test and has standard pipelines for quality check of all models for pre processing and post processing.\n\nIntegrated it with Sonarcube for IT checks and application rejestration and standard structure for testing timely on performance and check on usage and reception of the tool. It is now a fully stable solution used for pacakging most of the models which are being deployed on the edge."
     }
   ],
   "caseStudyNote": "Dollar values are rounded estimates from internal business cases, not audited savings. \"Identified opportunity\" means potential value across further sites, not realised value. Results are team outcomes; my role is stated on each case. Details are kept at a level that respects confidentiality.",
@@ -216,7 +240,7 @@
         "ML",
         "IoT"
       ],
-      "link": "#case-4",
+      "link": "#ai-x",
       "skills": [
         "GitHub Actions",
         "Industrial Edge",
@@ -363,7 +387,7 @@
       "text": "A use case isn't done until it runs on the line and someone owns it.",
       "proof": {
         "label": "AI-X line pilot",
-        "href": "#case-4"
+        "href": "#ai-x"
       }
     },
     {
@@ -371,7 +395,7 @@
       "text": "Templates and patterns that let the next site go live in a fraction of the effort.",
       "proof": {
         "label": "Anomaly-detection template",
-        "href": "#case-1"
+        "href": "#anomaly-detection"
       }
     },
     {
@@ -379,7 +403,7 @@
       "text": "Adoption is a people problem. Coaching and community make technology stick.",
       "proof": {
         "label": "WCQ program",
-        "href": "#case-3"
+        "href": "#wcq"
       }
     }
   ],
@@ -399,7 +423,7 @@
       "company": "Procter & Gamble · Kronberg (thesis with TH Köln)",
       "dateRange": "May 2023 – Feb 2024",
       "bullets": [
-        "Built the first version of AI-X, taking ML models from JMP to PLC-connected edge devices, and led its production-line pilot (case study 04)."
+        "Built the first version of AI-X, taking ML models from JMP to PLC-connected edge devices, and led its production-line pilot (see the AI-X case study)."
       ]
     },
     {
@@ -433,11 +457,11 @@
       "proof": [
         {
           "label": "WCQ program",
-          "href": "#case-3"
+          "href": "#wcq"
         },
         {
           "label": "Touchless quality",
-          "href": "#case-2"
+          "href": "#touchless-quality"
         }
       ]
     },
@@ -453,11 +477,11 @@
       "proof": [
         {
           "label": "Anomaly detection",
-          "href": "#case-1"
+          "href": "#anomaly-detection"
         },
         {
           "label": "Touchless quality",
-          "href": "#case-2"
+          "href": "#touchless-quality"
         }
       ]
     },
@@ -474,7 +498,7 @@
       "proof": [
         {
           "label": "AI-X",
-          "href": "#case-4"
+          "href": "#ai-x"
         }
       ]
     },
@@ -490,11 +514,11 @@
       "proof": [
         {
           "label": "AI-X",
-          "href": "#case-4"
+          "href": "#ai-x"
         },
         {
           "label": "Anomaly detection",
-          "href": "#case-1"
+          "href": "#anomaly-detection"
         }
       ]
     }
