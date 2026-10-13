@@ -104,28 +104,28 @@
       ]
     },
     {
-      "name": "RapidMLOps: ML from Excel-like tools to the PLC",
-      "tag": "Master thesis · MLOps",
-      "metric": "3",
-      "metricLabel": "PLC vendor families supported (Siemens, Rockwell, Mitsubishi)",
-      "role": "Designed and built the framework as my master thesis and led the production-line pilot.",
+      "name": "AI-X: from any ML model to an edge-ready package",
+      "tag": "MLOps · Edge AI",
+      "metric": "6",
+      "metricLabel": "business units using AI-X",
+      "role": "Designed and built AI-X, from first prototype on a production line to the standard packaging route.",
       "flow": [
-        "JMP model",
-        "Package (Azure ML + GitHub)",
-        "Siemens edge device",
-        "PLC read/write (S7, OPC UA, MQTT)",
-        "Closed-loop control"
+        "Model + simple text inputs",
+        "GitHub Actions",
+        "Tests & SonarQube",
+        "Deployment package",
+        "Siemens Industrial Edge"
       ],
-      "problem": "Engineers built good models in JMP, but there was no path to run them on edge devices against live PLC data.",
-      "action": "Built an end-to-end framework to package, deploy and manage models with Azure ML, GitHub and Power Apps; enabled JMP models on Siemens edge devices with real-time S7 PLC read/write, and a generic method for Siemens, Rockwell and Mitsubishi PLCs via OPC UA, MQTT, ZMQ and EtherNet/IP.",
-      "result": "Piloted on a production line with millisecond predictions for closed-loop control; built a lab test stand (pH soft sensor) and trained professionals from multiple business units.",
-      "learning": "Meet engineers in the tools they already use, then automate everything after the model.",
+      "problem": "Building an ML model was never the slow part; getting it onto the machine was. Every model had to be hand-fitted to the Siemens Industrial Edge SDK, which took as long as developing it, and the work came back after every retrain. Deployments slipped and adoption stalled.",
+      "action": "Mapped exactly which parts of the SDK change from model to model and built a model-agnostic skeleton around them. Engineers describe their model in a few text inputs and a GitHub Actions workflow produces the deployment package, with pytest unit tests, standard pre- and post-processing checks, SonarQube code-quality scans, application registration and built-in tracking of performance and usage.",
+      "result": "A stable production solution that now packages most of the models we deploy to the edge. Retraining no longer means a new deployment project: updates ship through the same pipeline.",
+      "learning": "Automate the part everyone repeats, not the part everyone notices.",
       "skills": [
-        "Azure ML",
-        "OPC UA",
-        "MQTT",
-        "Siemens S7",
-        "Power Apps"
+        "GitHub Actions",
+        "Siemens Industrial Edge",
+        "pytest",
+        "SonarQube",
+        "Python"
       ]
     },
     {
@@ -209,18 +209,18 @@
       ]
     },
     {
-      "name": "RapidMLOps",
-      "description": "My master thesis: a framework that takes ML models from JMP to PLC-connected edge devices for closed-loop control. Read the case study.",
-      "status": "Thesis",
+      "name": "AI-X",
+      "description": "Turns any ML model into a Siemens Industrial Edge deployment package from a few text inputs, with automated tests and quality checks. Read the case study.",
+      "status": "In production",
       "categories": [
         "ML",
         "IoT"
       ],
       "link": "#case-4",
       "skills": [
-        "Azure ML",
-        "OPC UA",
-        "MQTT"
+        "GitHub Actions",
+        "Industrial Edge",
+        "SonarQube"
       ]
     },
     {
@@ -362,7 +362,7 @@
       "title": "Pilot to production",
       "text": "A use case isn't done until it runs on the line and someone owns it.",
       "proof": {
-        "label": "RapidMLOps line pilot",
+        "label": "AI-X line pilot",
         "href": "#case-4"
       }
     },
@@ -399,7 +399,7 @@
       "company": "Procter & Gamble · Kronberg (thesis with TH Köln)",
       "dateRange": "May 2023 – Feb 2024",
       "bullets": [
-        "Built RapidMLOps, a framework to take ML models from JMP to PLC-connected edge devices, and led its production-line pilot (case study 04)."
+        "Built the first version of AI-X, taking ML models from JMP to PLC-connected edge devices, and led its production-line pilot (case study 04)."
       ]
     },
     {
@@ -473,7 +473,7 @@
       ],
       "proof": [
         {
-          "label": "RapidMLOps",
+          "label": "AI-X",
           "href": "#case-4"
         }
       ]
@@ -489,7 +489,7 @@
       ],
       "proof": [
         {
-          "label": "RapidMLOps",
+          "label": "AI-X",
           "href": "#case-4"
         },
         {
