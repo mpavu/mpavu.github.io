@@ -14,15 +14,15 @@
   },
   "stats": [
     {
-      "value": "55+",
-      "label": "AI use cases coached to production"
+      "value": "55",
+      "label": "Manufacturing AI use cases developed/ coached to production"
     },
     {
-      "value": "18+",
+      "value": "18",
       "label": "manufacturing sites worldwide"
     },
     {
-      "value": "11+",
+      "value": "10",
       "label": "business units reached"
     },
     {
@@ -32,8 +32,8 @@
   ],
   "caseStudies": [
     {
-      "id": "smart-lines",
       "name": "Smart Self-Improving Lines: turning one-off AI wins into repeatable playbooks",
+      "id": "smart-lines",
       "tag": "Ongoing · Agentic AI · Scale-up",
       "metric": "3",
       "metricLabel": "proven solutions in reapplication (filling, labelling, capping)",
@@ -59,8 +59,8 @@
       ]
     },
     {
-      "id": "anomaly-detection",
       "name": "Anomaly detection: catching the failures you have never seen",
+      "id": "anomaly-detection",
       "tag": "Predictive maintenance · Quality",
       "metric": "15",
       "metricLabel": "use cases running on one standard approach",
@@ -86,8 +86,8 @@
       ]
     },
     {
-      "id": "ai-x",
       "name": "AI-X: removing the entry barrier from model to machine",
+      "id": "ai-x",
       "tag": "Product development · MLOps · Edge AI",
       "metric": "6",
       "metricLabel": "business units using AI-X",
@@ -114,8 +114,8 @@
       ]
     },
     {
-      "id": "wcq",
       "name": "WISE Coach Qualification (WCQ): the real power is people",
+      "id": "wcq",
       "tag": "Capability building · Change management",
       "metric": "200+",
       "metricLabel": "practitioners trained & coached",
@@ -140,8 +140,8 @@
       ]
     },
     {
-      "id": "touchless-quality",
       "name": "Touchless quality: replacing manual sampling",
+      "id": "touchless-quality",
       "tag": "Quality",
       "metric": "~$2M",
       "metricLabel": "estimated value per implementation",
