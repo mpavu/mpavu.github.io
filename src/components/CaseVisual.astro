@@ -1,0 +1,449 @@
+---
+// Animated analogy graphics for case studies. Purely decorative (aria-hidden).
+// kind: "playbook" | "heartbeat" | "container" | "network"
+interface Props {
+  kind: string;
+}
+const { kind } = Astro.props;
+---
+
+<div class="viz" aria-hidden="true">
+  {
+    kind === "playbook" && (
+      <svg viewBox="0 0 320 140" class="viz-svg">
+        <path d="M57 70 L125 70" class="flow-line" />
+        <path d="M185 70 L255 30" class="flow-line" />
+        <path d="M185 70 L255 70" class="flow-line" />
+        <path d="M185 70 L255 110" class="flow-line" />
+
+        <g transform="translate(15, 48)">
+          <rect width="42" height="44" rx="8" class="node-box" />
+          <circle cx="21" cy="18" r="6" class="spark" />
+          <text x="21" y="36" class="lbl">1 Pilot</text>
+        </g>
+
+        <g transform="translate(125, 32)">
+          <rect width="60" height="76" rx="8" class="playbook-box" />
+          <text x="30" y="18" class="lbl-accent">CBA DOCS</text>
+          <line x1="12" y1="30" x2="48" y2="30" class="doc-line" />
+          <line x1="12" y1="42" x2="44" y2="42" class="doc-line d2" />
+          <line x1="12" y1="54" x2="48" y2="54" class="doc-line d3" />
+          <line x1="12" y1="64" x2="36" y2="64" class="doc-line d4" />
+          <g transform="translate(48, -6)">
+            <g class="agent">
+              <circle cx="8" cy="8" r="11" class="agent-circle" />
+              <path d="M8 2 L9.5 6.5 L14 8 L9.5 9.5 L8 14 L6.5 9.5 L2 8 L6.5 6.5 Z" class="agent-star" />
+            </g>
+          </g>
+        </g>
+
+        <g transform="translate(255, 16)">
+          <rect width="56" height="28" rx="6" class="scale-node n1" />
+          <text x="28" y="18" class="lbl">Filling</text>
+        </g>
+        <g transform="translate(255, 56)">
+          <rect width="56" height="28" rx="6" class="scale-node n2" />
+          <text x="28" y="18" class="lbl">Labelling</text>
+        </g>
+        <g transform="translate(255, 96)">
+          <rect width="56" height="28" rx="6" class="scale-node n3" />
+          <text x="28" y="18" class="lbl">Capping</text>
+        </g>
+      </svg>
+    )
+  }
+
+  {
+    kind === "heartbeat" && (
+      <svg viewBox="0 0 320 140" class="viz-svg">
+        <line x1="20" y1="35" x2="300" y2="35" class="grid-line" />
+        <line x1="20" y1="75" x2="300" y2="75" class="grid-line" />
+        <line x1="20" y1="115" x2="300" y2="115" class="grid-line" />
+        <text x="24" y="24" class="lbl-left">BASELINE: "NORMAL" SIGNAL</text>
+        <path
+          d="M 20 80 Q 35 60, 50 80 T 80 80 T 110 80 T 140 80 T 170 80 L 195 80 L 205 95 L 215 24 L 226 105 L 235 80 Q 250 60, 265 80 T 295 80"
+          class="wave"
+        />
+        <g transform="translate(215, 24)">
+          <circle cx="0" cy="0" r="6" class="anomaly-dot" />
+          <circle cx="0" cy="0" r="18" class="anomaly-radar" />
+        </g>
+        <g class="alert-pill" transform="translate(226, 40)">
+          <rect width="72" height="22" rx="4" class="alert-box" />
+          <text x="36" y="14" class="alert-text">ANOMALY!</text>
+        </g>
+      </svg>
+    )
+  }
+
+  {
+    kind === "container" && (
+      <svg viewBox="0 0 320 140" class="viz-svg">
+        <line x1="20" y1="102" x2="300" y2="102" class="track" />
+        <line x1="20" y1="106" x2="300" y2="106" class="track-dashes" />
+
+        <g transform="translate(135, 22)">
+          <rect width="54" height="80" rx="6" class="scanner" />
+          <text x="27" y="15" class="lbl-accent">CI/CD GATE</text>
+          <line x1="4" y1="50" x2="50" y2="50" class="laser" />
+          <text x="27" y="94" class="lbl-pass">✓ COMPLIANT</text>
+        </g>
+
+        <g class="container">
+          <rect x="0" y="54" width="64" height="42" rx="5" class="container-body" />
+          <line x1="16" y1="54" x2="16" y2="96" class="rib" />
+          <line x1="32" y1="54" x2="32" y2="96" class="rib" />
+          <line x1="48" y1="54" x2="48" y2="96" class="rib" />
+          <rect x="10" y="65" width="44" height="20" rx="3" class="container-label" />
+          <text x="32" y="79" class="container-text">AI-X.py</text>
+        </g>
+
+        <g transform="translate(248, 40)">
+          <rect width="56" height="62" rx="6" class="machine" />
+          <circle cx="44" cy="14" r="4" class="led" />
+          <text x="28" y="36" class="lbl">SIEMENS</text>
+          <text x="28" y="48" class="lbl-accent">EDGE</text>
+        </g>
+      </svg>
+    )
+  }
+
+  {
+    kind === "network" && (
+      <svg viewBox="0 0 320 140" class="viz-svg">
+        <g class="spokes">
+          <line x1="160" y1="70" x2="85" y2="35" />
+          <line x1="160" y1="70" x2="85" y2="105" />
+          <line x1="160" y1="70" x2="235" y2="35" />
+          <line x1="160" y1="70" x2="235" y2="105" />
+          <line x1="85" y1="35" x2="35" y2="20" />
+          <line x1="85" y1="35" x2="35" y2="55" />
+          <line x1="85" y1="105" x2="35" y2="85" />
+          <line x1="85" y1="105" x2="35" y2="120" />
+          <line x1="235" y1="35" x2="285" y2="20" />
+          <line x1="235" y1="35" x2="285" y2="55" />
+          <line x1="235" y1="105" x2="285" y2="85" />
+          <line x1="235" y1="105" x2="285" y2="120" />
+        </g>
+        <circle cx="160" cy="70" r="14" class="ripple" />
+        <circle cx="160" cy="70" r="14" class="ripple r2" />
+        <circle cx="160" cy="70" r="16" class="hub" />
+        <text x="160" y="73" class="hub-text">WCQ</text>
+        <circle cx="85" cy="35" r="8" class="coach" />
+        <circle cx="85" cy="105" r="8" class="coach" />
+        <circle cx="235" cy="35" r="8" class="coach" />
+        <circle cx="235" cy="105" r="8" class="coach" />
+        <g class="plants">
+          <circle cx="35" cy="20" r="5" />
+          <circle cx="35" cy="55" r="5" />
+          <circle cx="35" cy="85" r="5" />
+          <circle cx="35" cy="120" r="5" />
+          <circle cx="285" cy="20" r="5" />
+          <circle cx="285" cy="55" r="5" />
+          <circle cx="285" cy="85" r="5" />
+          <circle cx="285" cy="120" r="5" />
+        </g>
+        <text x="160" y="132" class="lbl-accent">200+ PRACTITIONERS COACHED</text>
+      </svg>
+    )
+  }
+</div>
+
+<style>
+  /* Palette: night panel, sky flows, blush highlights, tangerine alerts */
+  .viz {
+    --sky: #c0d6ff;
+    --blush: #ffd5fb;
+    --tangerine: #f86c2f;
+    --label: #ddbdb2;
+    background: #1e0605;
+    border: 1px solid rgba(255, 213, 251, 0.15);
+    border-radius: 0.9rem;
+    padding: 0.5rem;
+    overflow: hidden;
+  }
+  .viz-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .lbl,
+  .lbl-left,
+  .lbl-accent,
+  .lbl-pass,
+  .alert-text,
+  .container-text,
+  .hub-text {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 8.5px;
+    font-weight: 600;
+    text-anchor: middle;
+    fill: var(--label);
+    letter-spacing: 0.04em;
+  }
+  .lbl-left {
+    text-anchor: start;
+    fill: #8e5a51;
+  }
+  .lbl-accent {
+    fill: var(--blush);
+  }
+  .lbl-pass {
+    fill: var(--sky);
+  }
+
+  /* Scaling helpers: scale around each element's own centre */
+  .agent,
+  .anomaly-radar,
+  .ripple {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  /* 01 Living playbook */
+  .node-box,
+  .scale-node {
+    fill: rgba(255, 255, 255, 0.05);
+    stroke: rgba(255, 213, 251, 0.3);
+    stroke-width: 1.5;
+  }
+  .playbook-box {
+    fill: rgba(255, 255, 255, 0.04);
+    stroke: var(--blush);
+    stroke-width: 1.5;
+  }
+  .flow-line {
+    fill: none;
+    stroke: var(--sky);
+    stroke-width: 1.75;
+    stroke-dasharray: 5 5;
+    animation: dash 1.5s linear infinite;
+  }
+  .spark {
+    fill: var(--tangerine);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .doc-line {
+    stroke: var(--sky);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: write 3.2s ease-in-out infinite;
+  }
+  .d2 { animation-delay: 0.4s; }
+  .d3 { animation-delay: 0.8s; }
+  .d4 { animation-delay: 1.2s; }
+  .agent-circle {
+    fill: #1e0605;
+    stroke: var(--blush);
+    stroke-width: 1.5;
+  }
+  .agent-star {
+    fill: var(--tangerine);
+  }
+  .agent {
+    animation: float 2.4s ease-in-out infinite;
+  }
+  .scale-node {
+    animation: light 3.2s ease-in-out infinite;
+  }
+  .n1 { animation-delay: 1.2s; }
+  .n2 { animation-delay: 1.5s; }
+  .n3 { animation-delay: 1.8s; }
+
+  /* 02 Heartbeat */
+  .grid-line {
+    stroke: rgba(255, 255, 255, 0.07);
+    stroke-width: 1;
+  }
+  .wave {
+    fill: none;
+    stroke: var(--sky);
+    stroke-width: 2.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+    animation: draw 3.6s linear infinite;
+  }
+  .anomaly-dot {
+    fill: var(--tangerine);
+    animation: flash 3.6s ease-in-out infinite;
+  }
+  .anomaly-radar {
+    fill: none;
+    stroke: var(--tangerine);
+    stroke-width: 1.75;
+    animation: radar 3.6s ease-out infinite;
+  }
+  .alert-pill {
+    animation: flash 3.6s ease-in-out infinite;
+  }
+  .alert-box {
+    fill: rgba(248, 108, 47, 0.2);
+    stroke: var(--tangerine);
+    stroke-width: 1.2;
+  }
+  .alert-text {
+    fill: #ffb089;
+    font-size: 8px;
+  }
+
+  /* 03 Shipping container */
+  .track {
+    stroke: rgba(255, 213, 251, 0.3);
+    stroke-width: 2;
+  }
+  .track-dashes {
+    stroke: var(--sky);
+    stroke-width: 2;
+    stroke-dasharray: 8 8;
+    animation: dash 1s linear infinite;
+  }
+  .container {
+    animation: move 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .container-body {
+    fill: #6d0101;
+    stroke: var(--blush);
+    stroke-width: 1.5;
+  }
+  .rib {
+    stroke: rgba(30, 6, 5, 0.5);
+    stroke-width: 1.5;
+  }
+  .container-label {
+    fill: #1e0605;
+  }
+  .container-text {
+    fill: var(--sky);
+    font-size: 8.5px;
+  }
+  .scanner {
+    fill: rgba(192, 214, 255, 0.06);
+    stroke: rgba(192, 214, 255, 0.5);
+    stroke-dasharray: 3 3;
+    stroke-width: 1.25;
+  }
+  .laser {
+    stroke: var(--sky);
+    stroke-width: 2;
+    animation: scan 1.2s ease-in-out infinite alternate;
+  }
+  .machine {
+    fill: rgba(255, 255, 255, 0.05);
+    stroke: rgba(255, 213, 251, 0.4);
+    stroke-width: 1.5;
+  }
+  .led {
+    fill: var(--tangerine);
+    animation: pulse 1.5s infinite;
+  }
+
+  /* 04 Network */
+  .spokes line {
+    stroke: rgba(192, 214, 255, 0.35);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+    animation: dash 2s linear infinite;
+  }
+  .hub {
+    fill: #6d0101;
+    stroke: var(--blush);
+    stroke-width: 2;
+  }
+  .hub-text {
+    fill: #fcf4f0;
+    font-size: 8px;
+  }
+  .ripple {
+    fill: none;
+    stroke: var(--blush);
+    stroke-width: 1.5;
+    animation: ripple 3s ease-out infinite;
+  }
+  .r2 {
+    animation-delay: 1.5s;
+  }
+  .coach {
+    fill: var(--sky);
+    stroke: #1e0605;
+    stroke-width: 2;
+    animation: pulse 2s infinite alternate;
+  }
+  .plants circle {
+    fill: #5e2a25;
+    animation: ignite 3s ease-in-out infinite;
+  }
+
+  @keyframes dash {
+    to { stroke-dashoffset: -20; }
+  }
+  @keyframes write {
+    0%, 15% { stroke-dashoffset: 40; opacity: 0.3; }
+    45%, 85% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 40; opacity: 0.3; }
+  }
+  @keyframes light {
+    0%, 40% { stroke: rgba(255, 213, 251, 0.3); fill: rgba(255, 255, 255, 0.05); }
+    55%, 85% { stroke: #ffd5fb; fill: rgba(255, 213, 251, 0.2); }
+    100% { stroke: rgba(255, 213, 251, 0.3); fill: rgba(255, 255, 255, 0.05); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-4px) scale(1.1); }
+  }
+  @keyframes draw {
+    0% { stroke-dashoffset: 420; }
+    70%, 100% { stroke-dashoffset: 0; }
+  }
+  @keyframes flash {
+    0%, 42% { opacity: 0; }
+    48%, 88% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes radar {
+    0%, 42% { transform: scale(0.3); opacity: 0; }
+    50% { opacity: 1; }
+    85%, 100% { transform: scale(1.7); opacity: 0; }
+  }
+  @keyframes move {
+    0% { transform: translateX(18px); opacity: 0; }
+    10% { transform: translateX(24px); opacity: 1; }
+    45%, 60% { transform: translateX(130px); opacity: 1; }
+    85% { transform: translateX(238px); opacity: 1; }
+    95%, 100% { transform: translateX(244px); opacity: 0; }
+  }
+  @keyframes scan {
+    0% { transform: translateY(-22px); opacity: 0.4; }
+    100% { transform: translateY(22px); opacity: 1; }
+  }
+  @keyframes ripple {
+    0% { transform: scale(1); opacity: 0.85; }
+    100% { transform: scale(4.2); opacity: 0; }
+  }
+  @keyframes ignite {
+    0%, 30% { fill: #5e2a25; }
+    55%, 85% { fill: #f86c2f; }
+    100% { fill: #5e2a25; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.65; }
+    50% { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .viz-svg * {
+      animation: none !important;
+    }
+    .doc-line,
+    .wave {
+      stroke-dashoffset: 0;
+    }
+    .container {
+      transform: translateX(24px);
+    }
+  }
+</style>

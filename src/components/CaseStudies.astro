@@ -1,88 +1,160 @@
 ---
 import { siteConfig } from "../config";
-import SectionHeading from "./SectionHeading.astro";
-const studies = siteConfig.caseStudies ?? [];
-const steps = [
-  { key: "problem", label: "Problem" },
-  { key: "action", label: "What I did" },
-  { key: "result", label: "Result" },
-  { key: "learning", label: "What I learned" },
-] as const;
+import CaseVisual from "./CaseVisual.astro";
+
+const studies = (siteConfig.caseStudies ?? []).filter((c) => !c.hidden);
+
+// Headline numbers: new `kpis` list, falling back to the older single metric
+const kpisOf = (cs: any) =>
+  (cs.kpis ?? (cs.metric ? [{ value: cs.metric, label: cs.metricLabel }] : [])).filter((k: any) => k?.value);
+
+// Minimal **bold** support for text written in Pages CMS
+const parts = (text = "") => text.split(/\*\*(.+?)\*\*/g).map((t, i) => ({ t, bold: i % 2 === 1 }));
 ---
 
 {
   studies.length > 0 && (
     <section id="work" class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-        <SectionHeading label="selected work" title="Case Studies">
-          <p class="mt-6 text-sm text-gray-500 dark:text-gray-400 max-w-xs">{siteConfig.caseStudyNote}</p>
-        </SectionHeading>
-        <div class="lg:col-span-8 space-y-8">
-          {studies.map((cs, i) => (
-            <article id={cs.id || `case-${i + 1}`} class="reveal scroll-mt-24 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.03] p-5 sm:p-8 hover:shadow-lg hover:border-gray-300 dark:hover:border-white/20 transition-all duration-300">
-              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                <div>
+      <div class="max-w-3xl">
+        <p class="font-mono text-sm text-[var(--accent)]">// selected work</p>
+        <h2 class="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">Case Studies</h2>
+        <div class="w-[75px] h-[5px] mt-3 rounded-full bg-[var(--accent)]" />
+        {siteConfig.caseStudyHook && (
+          <p class="mt-6 text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">{siteConfig.caseStudyHook}</p>
+        )}
+      </div>
+
+      <div class="mt-12 space-y-10">
+        {studies.map((cs, i) => {
+          const kpis = kpisOf(cs);
+          const showVisual = cs.visual && cs.visual !== "none";
+          return (
+            <article
+              id={cs.id || `case-${i + 1}`}
+              class="reveal scroll-mt-24 rounded-3xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-5 sm:p-8 lg:p-10 shadow-sm"
+            >
+              <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-5">
+                <div class="max-w-2xl">
                   <p class="font-mono text-sm text-[var(--accent)]">
-                    0{i + 1} · {cs.tag}
+                    {String(i + 1).padStart(2, "0")} · {cs.tag}
                   </p>
-                  <h3 class="mt-1 text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{cs.name}</h3>
+                  <h3 class="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">{cs.name}</h3>
                 </div>
-                <div class="sm:text-right shrink-0">
-                  <p class="text-3xl font-extrabold text-[var(--accent)]">{cs.metric}</p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400 max-w-[12rem] sm:ml-auto">{cs.metricLabel}</p>
-                </div>
+                {kpis.length > 0 && (
+                  <div class="grid grid-cols-2 gap-3 shrink-0 lg:flex">
+                    {kpis.map((k: any, j: number) => (
+                      <div class:list={["rounded-xl px-4 py-3 lg:min-w-[8.5rem] lg:text-right", j % 2 === 0 ? "bg-sky" : "bg-blush"]}>
+                        <span class="block text-2xl font-extrabold leading-tight text-maroon">{k.value}</span>
+                        <span class="block text-xs font-medium text-maroon/80">{k.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
-              {cs.role && (
-                <p class="mt-4 text-sm text-gray-700 dark:text-gray-300">
-                  <span class="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mr-2">My role</span>
-                  {cs.role}
+              {cs.analogy && (
+                <div
+                  class:list={[
+                    "mt-6 grid gap-5 items-center rounded-r-2xl border-l-4 border-tangerine bg-cream dark:bg-white/[0.04] p-4 sm:p-5",
+                    showVisual && "lg:grid-cols-[1.35fr_1fr]",
+                  ]}
+                >
+                  <blockquote class="italic leading-relaxed text-gray-800 dark:text-gray-200">
+                    <strong class="not-italic font-mono text-xs uppercase tracking-widest text-tangerine mr-1">The analogy</strong>
+                    {cs.analogy}
+                  </blockquote>
+                  {showVisual && <CaseVisual kind={cs.visual} />}
+                </div>
+              )}
+
+              <dl class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { label: "The friction", text: cs.problem },
+                  { label: "The impact", text: cs.result },
+                ]
+                  .filter((x) => x.text)
+                  .map((x) => (
+                    <div>
+                      <dt class="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">{x.label}</dt>
+                      <dd class="mt-1.5 leading-relaxed text-gray-700 dark:text-gray-300">
+                        {parts(x.text).map((p) => (p.bold ? <strong class="font-bold text-gray-900 dark:text-white">{p.t}</strong> : p.t))}
+                      </dd>
+                    </div>
+                  ))}
+              </dl>
+
+              {cs.learning && (
+                <p class="mt-6 border-y border-dashed border-gray-300 dark:border-white/15 py-3 text-gray-800 dark:text-gray-200">
+                  <span class="font-semibold text-[var(--accent)] mr-1.5">Lesson learned:</span>“{cs.learning}”
                 </p>
               )}
 
-              {cs.flow && cs.flow.length > 0 && (
-                <figure class="mt-6">
-                  <figcaption class="sr-only">How the solution works: {cs.flow.join(", then ")}</figcaption>
-                  <ol class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2" aria-hidden="true">
-                    {cs.flow.map((step, j) => (
-                      <li class="flex flex-col sm:flex-row items-center gap-2">
-                        <span
-                          class:list={[
-                            "w-full sm:w-auto text-center rounded-lg border px-3 py-2 text-xs sm:text-sm font-medium",
-                            j === cs.flow.length - 1
-                              ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--on-accent)]"
-                              : "border-gray-300 dark:border-white/15 bg-white dark:bg-white/5 text-gray-800 dark:text-gray-200",
-                          ]}
-                        >
-                          {step}
-                        </span>
-                        {j < cs.flow.length - 1 && (
-                          <span class="text-[var(--accent)] font-bold leading-none rotate-90 sm:rotate-0">→</span>
-                        )}
-                      </li>
-                    ))}
-                  </ol>
-                </figure>
+              {(cs.role || cs.action || cs.flow?.length > 0) && (
+                <details class="group mt-6 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.02] px-4 sm:px-5 py-3">
+                  <summary class="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-[var(--accent)] select-none">
+                    How I built it: architecture, flow &amp; my role
+                    <span class="text-xl leading-none transition-transform duration-200 group-open:rotate-45" aria-hidden="true">+</span>
+                  </summary>
+                  <div class="mt-4 space-y-5 border-t border-gray-200 dark:border-white/10 pt-4 text-[0.95rem] leading-relaxed text-gray-700 dark:text-gray-300">
+                    {cs.role && (
+                      <p>
+                        <span class="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mr-2">My role</span>
+                        {cs.role}
+                      </p>
+                    )}
+
+                    {cs.flow && cs.flow.length > 0 && (
+                      <figure>
+                        <figcaption class="sr-only">How it works: {cs.flow.join(", then ")}</figcaption>
+                        <ol class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2" aria-hidden="true">
+                          {cs.flow.map((step: string, j: number) => (
+                            <li class="flex flex-col sm:flex-row items-center gap-2">
+                              <span
+                                class:list={[
+                                  "w-full sm:w-auto text-center rounded-lg border px-3 py-2 text-xs sm:text-sm font-medium",
+                                  j === cs.flow.length - 1
+                                    ? "border-[var(--accent)] bg-[var(--accent)] text-[var(--on-accent)]"
+                                    : "border-gray-300 dark:border-white/15 bg-white dark:bg-white/5 text-gray-800 dark:text-gray-200",
+                                ]}
+                              >
+                                {step}
+                              </span>
+                              {j < cs.flow.length - 1 && <span class="text-[var(--accent)] font-bold leading-none rotate-90 sm:rotate-0">→</span>}
+                            </li>
+                          ))}
+                        </ol>
+                      </figure>
+                    )}
+
+                    {cs.action && (
+                      <p>
+                        <strong class="text-gray-900 dark:text-white">What I did: </strong>
+                        {parts(cs.action).map((p) => (p.bold ? <strong>{p.t}</strong> : p.t))}
+                      </p>
+                    )}
+                  </div>
+                </details>
               )}
 
-              <dl class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
-                {steps.map((s) => (
-                  <div class={s.key === "learning" ? "md:col-span-2 rounded-lg bg-white dark:bg-white/5 border-l-4 border-[var(--accent)] p-4" : ""}>
-                    <dt class="font-mono text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">{s.label}</dt>
-                    <dd class="mt-1 text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300">{cs[s.key]}</dd>
-                  </div>
-                ))}
-              </dl>
-
               <div class="mt-6 flex flex-wrap gap-2">
-                {(cs.skills ?? []).map((sk) => (
+                {(cs.skills ?? []).map((sk: string) => (
                   <span class="px-2.5 py-1 rounded-md bg-gray-900 dark:bg-white/10 text-white dark:text-gray-200 text-xs font-medium">{sk}</span>
                 ))}
               </div>
             </article>
-          ))}
-        </div>
+          );
+        })}
       </div>
+
+      {siteConfig.caseStudyNote && (
+        <p class="mt-10 text-sm italic text-gray-500 dark:text-gray-400">* Note: {siteConfig.caseStudyNote}</p>
+      )}
     </section>
   )
 }
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

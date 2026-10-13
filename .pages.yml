@@ -76,6 +76,9 @@ content:
             type: string
 
       # ---------- Case studies ----------
+      - name: caseStudyHook
+        label: Case studies – intro line under the heading
+        type: text
       - name: caseStudies
         label: Case studies
         type: object
@@ -90,40 +93,58 @@ content:
           - name: id
             label: Link name (short, no spaces, e.g. ai-x; other sections link to it as #ai-x)
             type: string
+          - name: hidden
+            label: Hide this case study
+            type: boolean
           - name: tag
             label: Category tag
             type: string
-          - name: metric
-            label: Headline number
-            type: string
-          - name: metricLabel
-            label: What the number means
-            type: string
+          - name: kpis
+            label: Headline numbers (shown top right; two work best)
+            type: object
+            list: true
+            fields:
+              - name: value
+                label: Number or short word
+                type: string
+              - name: label
+                label: What it means
+                type: string
+          - name: analogy
+            label: The analogy (one or two sentences)
+            type: text
+          - name: visual
+            label: Animation next to the analogy
+            type: select
+            options:
+              values: [none, playbook, heartbeat, container, network]
+          - name: problem
+            label: The friction
+            type: text
+            description: Wrap words in **double asterisks** to make them bold.
+          - name: result
+            label: The impact
+            type: text
+            description: Wrap words in **double asterisks** to make them bold.
+          - name: learning
+            label: Lesson learned
+            type: text
           - name: role
-            label: My role
+            label: My role (inside "How I built it")
             type: text
           - name: flow
-            label: Flow diagram steps (last one is highlighted)
+            label: Flow diagram steps (inside "How I built it"; last one is highlighted)
             type: string
             list: true
-          - name: problem
-            label: Problem
-            type: text
           - name: action
-            label: What I did
-            type: text
-          - name: result
-            label: Result
-            type: text
-          - name: learning
-            label: What I learned
+            label: What I did (inside "How I built it")
             type: text
           - name: skills
             label: Skill chips
             type: string
             list: true
       - name: caseStudyNote
-        label: Note under "Case Studies" (how numbers are estimated)
+        label: Case studies – footnote (how numbers are estimated)
         type: text
 
       # ---------- Coinfluence ----------
