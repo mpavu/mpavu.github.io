@@ -32,26 +32,26 @@
   ],
   "caseStudies": [
     {
-      "name": "Anomaly detection as a reusable capability",
-      "tag": "Predictive maintenance",
-      "metric": "~$5.8M",
-      "metricLabel": "estimated value · single-site business case",
+      "name": "Anomaly detection: catching the failures you have never seen",
+      "tag": "Predictive maintenance · Quality",
+      "metric": "15",
+      "metricLabel": "use cases running on one standard approach",
       "role": "Owner of the deployment approach and coach to site project teams; sites built and ran their own projects.",
       "flow": [
-        "Historian & sensor data",
-        "SmartBox / Industrial Edge",
-        "Anomaly model",
-        "Early alert to maintenance",
-        "Reusable template"
+        "Machine & process signals",
+        "Off-the-shelf app on Industrial Edge",
+        "Unsupervised model learns 'normal'",
+        "Early alert",
+        "Reused across use cases"
       ],
-      "problem": "A critical gear failure on a mill showed that degradation was visible in the data long before it became a breakdown — but every site was building detection from scratch.",
-      "action": "Standardised anomaly-detection deployment on SmartBox edge infrastructure, Siemens Industrial Edge and historian data, and coached 20+ projects across Asia, Europe and the Americas.",
-      "result": "Early detection of mill degradation became the reference case and is now the template for predictive maintenance across the network.",
-      "learning": "Scale comes from the deployment pattern, not the model. A boring, repeatable pipeline beats a clever one-off.",
+      "problem": "Unplanned stops were costing production time, and there was no standard way to detect anomalies across many signals and processes. Predictive models hit a basic blocker: failures are rare, so there were never enough labelled examples to train a supervised model.",
+      "action": "Standardised on an off-the-shelf anomaly-detection app on Siemens Industrial Edge built on unsupervised models. Instead of learning what a failure looks like, it learns what normal looks like, so it can flag unforeseen and rare, high-impact events without labelled failure data, making it a practical starting point for any line.",
+      "result": "Piloted first on a one-off breakage that had cost millions: the model surfaced the failure in the data, and an induced-failure test confirmed it. The next use case was a frequent defect in moulding, where the model raised accurate alerts within one day of deployment, which won the teams' confidence. It now runs across 15 use cases.",
+      "learning": "When failures are rare, stop waiting for labels. Teach the model what normal looks like and let it tell you when something isn't.",
       "skills": [
+        "Unsupervised ML",
         "Anomaly detection",
         "Siemens Industrial Edge",
-        "SmartBox",
         "Time series"
       ]
     },
