@@ -27,7 +27,7 @@
     },
     {
       "value": "200+",
-      "label": "practitioners trained & coached"
+      "label": "citizen developers trained & coached"
     }
   ],
   "caseStudies": [
@@ -127,6 +127,19 @@
         "Siemens S7",
         "Power Apps"
       ]
+    },
+    {
+      "name": "AI-X Removing Entry Barrier",
+      "tag": "Product Development and Management",
+      "role": "Developed a CI/CD pipeline for packaging my python language based ML models for edge deployment .",
+      "flow": [
+        "Develop",
+        "Test",
+        "IT compliance",
+        "Lifecycle maintance",
+        "scale"
+      ],
+      "problem": "The effort of packaging model is equal to deploying model.\nMostly people somehow develop ML model for production but the journey to deploy takes equal time intensive. Mostly , we have siemens industrial edge and to deploy on to it, there is SDK which you adapt to your model to run on the edge. I took the SDK and found where the areas that changes and what is it needed to adapt. Took the info created a skeleton that can fit any ML model through simple text inputs to the workflow and github action based on the input produces the final deployment package. \n\nIt has a lot of pytest and unit test and has standard pipelines for quality check of all models for pre processing and post processing.\n\nIntegrated it with Sonarcube for IT checks and application rejestration and standard structure for testing timely on performance and check on usage and reception of the tool. It is now a fully stable solution used for pacakging most of the models which are being deployed on the edge."
     }
   ],
   "caseStudyNote": "Dollar values are rounded estimates from internal business cases, not audited savings. \"Identified opportunity\" means potential value across further sites, not realised value. Results are team outcomes; my role is stated on each case. Details are kept at a level that respects confidentiality.",
