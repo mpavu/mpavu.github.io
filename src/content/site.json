@@ -14,20 +14,20 @@
   },
   "stats": [
     {
-      "value": "55",
-      "label": "Manufacturing AI use cases developed/ coached to production"
+      "value": "55+",
+      "label": "ML/AI use cases led from definition to production"
     },
     {
-      "value": "18",
+      "value": "18+",
       "label": "manufacturing sites worldwide"
     },
     {
-      "value": "10",
+      "value": "11+",
       "label": "business units reached"
     },
     {
       "value": "200+",
-      "label": "citizen developers trained & coached"
+      "label": "participants trained in AI qualification"
     }
   ],
   "caseStudies": [
@@ -118,26 +118,28 @@
         "Auto-telemetry"
       ],
       "problem": "Building an ML model was never the slow part; getting it onto the machine was. Hand-fitting each model to the Siemens Industrial Edge SDK took as long as building the model itself, and the manual work restarted after every retrain.",
-      "action": "Mapped which parts of the SDK change from model to model and built a model-agnostic skeleton around them. Engineers describe their Python ML model in a few text inputs, and a GitHub Actions pipeline produces the deployment package end-to-end, complete with pytest unit tests, pre/post-processing gates, SonarQube IT-compliance scans and built-in telemetry for usage and performance.",
-      "result": "Now packages the majority of the edge ML models we deploy, across **6 business units**. Retraining no longer triggers a new deployment project: updates ship through the same compliant CI/CD pipeline.",
+      "action": "Mapped which parts of the Siemens Industrial Edge SDK change from model to model and built a model-agnostic skeleton around them. Engineers describe their Python ML model in a few text inputs, and a staged CI/CD pipeline (Azure ML, GitHub Actions, Power Apps) produces the deployment package end-to-end, complete with pytest unit tests, pre/post-processing gates, SonarQube IT-compliance scans and built-in telemetry for usage and performance.",
+      "result": "Cut model-to-deployment time from **90 to 30 days**. Shipped a production release in agile sprints with quality enforced through SonarQube and IT compliance review, then drove adoption through enablement sessions and hackathons. Retraining no longer triggers a new deployment project: updates ship through the same CI/CD pipeline.",
       "learning": "Automate the part everyone repeats, not the part everyone notices.",
       "skills": [
         "CI/CD",
         "DevOps",
+        "Azure ML",
         "GitHub Actions",
+        "Power Apps",
         "pytest",
         "SonarQube",
         "Siemens Industrial Edge",
-        "Product ownership"
+        "Agile"
       ],
       "kpis": [
         {
-          "value": "6",
-          "label": "business units adopted"
+          "value": "90 → 30",
+          "label": "days from model to deployment"
         },
         {
-          "value": "Zero-touch",
-          "label": "CI/CD edge packaging"
+          "value": "Low-code",
+          "label": "staged CI/CD to the edge"
         }
       ],
       "analogy": "Before standardised shipping containers, loading a cargo ship took weeks because every crate had to be hand-packed. Our ML models had the same problem: every Python model had to be hand-fitted to edge hardware, and re-fitted after every retrain. I built the shipping container.",
@@ -147,7 +149,7 @@
       "name": "WISE Coach Qualification (WCQ): turning plant teams into local AI builders",
       "id": "wcq",
       "tag": "Capability building · Change management",
-      "role": "Program lead: shaped the regional technical qualification, designed the learning journeys and facilitated coaching sessions across regions.",
+      "role": "Led the Manufacturing AI Qualification Program end-to-end across 4 regions: shaped the qualification, designed the learning journeys and delivered the sessions.",
       "flow": [
         "Capability mapping",
         "Tailored learning",
@@ -157,7 +159,7 @@
       ],
       "problem": "A central technical team alone cannot scale AI across a global plant network. Solutions only create lasting value when people at the site can spot high-ROI problems, navigate the architecture and own deployments locally.",
       "action": "Mapped regional capability across Python, JMP and SmartBox, and designed hands-on learning paths for coders and non-coders alike, anchored to real plant problems rather than theoretical exercises. Coached participants from initial use-case scoping through MVP development and local adoption.",
-      "result": "Qualified and coached **200+ practitioners across global regions**, with learning anchored to real plant use cases and coached MVPs rather than theory, supporting **55+ coached use cases** across 11+ business units.",
+      "result": "Designed and delivered **8 sessions across 4 regions** that trained **200+ participants** and enabled the delivery of **19 AI use cases** within a compressed timeframe, with learning anchored to real plant problems rather than theory.",
       "learning": "Great technology writes the pilot; empowered local teams write the scale.",
       "skills": [
         "Program leadership",
@@ -169,43 +171,43 @@
       "kpis": [
         {
           "value": "200+",
-          "label": "practitioners trained & coached"
+          "label": "participants trained"
         },
         {
-          "value": "Real",
-          "label": "plant use cases, not theory"
+          "value": "19",
+          "label": "AI use cases delivered"
         }
       ],
       "analogy": "You can't scale healthcare across a continent by flying one central surgeon to every town for a plaster; you train local paramedics. To scale AI across 18+ sites, WCQ shifts the central team from being the only builders to qualifying local practitioners who spot, build and own AI on their own floors.",
       "visual": "network"
     },
     {
-      "name": "Touchless quality: replacing manual sampling",
+      "name": "Touchless quality: ending 100% manual inspection on a soldering line",
       "id": "touchless-quality",
-      "tag": "Quality",
-      "role": "Set up the ML approach and led cross-functional alignment with the quality organisation, delivered together with site and data teams.",
+      "tag": "Quality · Process control",
       "flow": [
-        "Line process data",
-        "Cloud ML (Azure)",
-        "Continuous quality prediction",
-        "Quality-org validation",
-        "Scale-up"
+        "Process data",
+        "Reject pattern after maintenance",
+        "Pump-current control",
+        "No manual inspection"
       ],
-      "problem": "Product quality was checked through manual sampling — slow, labour-intensive and blind between samples.",
-      "action": "Drove a cloud ML approach for continuous quality prediction end-to-end, from data to model to acceptance, and partnered with the quality organisation and site teams to define validation and acceptance criteria.",
-      "result": "Secured quality-organisation acceptance for scale-up, with ~$12M of identified opportunity across further lines.",
-      "learning": "In regulated domains the hardest part is trust. Bring the quality team in at the start, not at sign-off.",
+      "problem": "Soldering rejects (~1%) were caught only by 100% manual inspection.",
+      "action": "Analysed the process data and found that rejects peaked right after maintenance and tracked the soldering pump current. Put a pump-current control strategy in place at start-up and after cleaning.",
+      "result": "Eliminated **100% manual inspection** and saved **$910K**.",
+      "learning": "The answer is often already in the process data. Look at when defects happen, not only what they are.",
       "skills": [
-        "Azure ML",
-        "Soft sensors",
-        "Validation",
-        "Cross-functional leadership",
-        "Stakeholder management"
+        "Data analysis",
+        "Process control",
+        "Quality"
       ],
       "kpis": [
         {
-          "value": "~$2M",
-          "label": "estimated value per implementation"
+          "value": "$910K",
+          "label": "saved"
+        },
+        {
+          "value": "100%",
+          "label": "manual inspection eliminated"
         }
       ],
       "visual": "none",
@@ -267,20 +269,36 @@
   ],
   "projects": [
     {
-      "name": "Agentic AI for manufacturing operations",
-      "description": "Evaluating Generative AI and agent-based applications for plant operations with technology partners.",
-      "status": "Exploring",
+      "name": "AI Use-Case Finder",
+      "status": "In use",
       "categories": [
         "AI"
       ],
+      "description": "RAG assistant over P&G's library of 100 AI/ML use cases, used globally by a 200+ member AI community to find proven solutions and reapplication ideas, then start from Common Best Approach templates. Saves hours of site-activation meetings.",
       "skills": [
-        "GenAI",
-        "Agents"
+        "LLM",
+        "RAG",
+        "Streamlit",
+        "SharePoint"
+      ]
+    },
+    {
+      "name": "CavitySense",
+      "status": "Scaling",
+      "categories": [
+        "ML",
+        "IoT"
+      ],
+      "description": "Multi-cavity anomaly detection that tracks process signals across 4–32 parallel cavities and pinpoints which cavity is drifting and when, so lines no longer stop to hunt for the faulty one. Scaled from one line to quality, scrap and breakdown use cases, with $470K per year in potential.",
+      "skills": [
+        "Anomaly detection",
+        "Process signals",
+        "Edge AI"
       ]
     },
     {
       "name": "AI-X",
-      "description": "Turns any ML model into a Siemens Industrial Edge deployment package from a few text inputs, with automated tests and quality checks. Read the case study.",
+      "description": "Low-code MLOps that cut model-to-deployment time from 90 to 30 days, packaging ML models for Siemens Industrial Edge through a staged CI/CD pipeline. Read the case study.",
       "status": "In production",
       "categories": [
         "ML",
@@ -291,6 +309,28 @@
         "GitHub Actions",
         "Industrial Edge",
         "SonarQube"
+      ]
+    },
+    {
+      "name": "Touchless Quality: Soldering",
+      "categories": [],
+      "description": "Found that soldering rejects (~1%) peaked right after maintenance and tracked the pump current, then put a pump-current control strategy in place at start-up and after cleaning. Eliminated 100% manual inspection and saved $910K.",
+      "skills": [
+        "Data analysis",
+        "Process control"
+      ]
+    },
+    {
+      "name": "AI Use-Case ROI Prioritizer",
+      "status": "In progress",
+      "categories": [
+        "AI"
+      ],
+      "description": "Public web tool where plant teams describe a problem in plain language and get value, feasibility and data-readiness scores plus a go/no-go recommendation, based on patterns from 55+ industrial AI deployments.",
+      "skills": [
+        "LLM",
+        "Python",
+        "Streamlit"
       ]
     },
     {
@@ -307,7 +347,7 @@
     },
     {
       "name": "Handwritten character recognition",
-      "description": "CNN-based handwritten character recognition built with Keras and TensorFlow.",
+      "description": "CNN-based handwritten character recognition in Python with Keras and TensorFlow, built during my data-science internship.",
       "categories": [
         "AI",
         "ML"
@@ -420,7 +460,7 @@
     },
     {
       "label": "Languages",
-      "value": "English (C2), Tamil, Hindi, German (A2)"
+      "value": "English (C2), German (B1, ongoing), Tamil, Hindi"
     }
   ],
   "principles": [
@@ -455,50 +495,55 @@
   ],
   "experience": [
     {
-      "title": "Manufacturing AI Manager (WISE – Intelligent Control Automation Platform)",
-      "company": "Procter & Gamble · Kronberg Innovation Center",
+      "title": "Manufacturing AI Manager",
+      "company": "Procter & Gamble GmbH, Corporate Engineering · Kronberg, Germany",
       "dateRange": "Apr 2024 – Present",
       "bullets": [
-        "Lead the scaling of manufacturing AI across P&G's global plant network; coached 55+ use cases across 11+ business units and 18+ sites (~$15M+ estimated single-instance value, ~$38M+ identified opportunity).",
-        "Designed a repeatable deployment pattern for shrink-sleeve defect prediction planned across 19 lines; deployed multi-cavity edge anomaly monitoring at a German plant.",
-        "Evaluate and pilot technologies with Siemens, ABB, Falcon Labs and AI vendors, including GenAI and agent-based applications."
+        "Manufacturing AI scaling: led the development and scaling of 55+ ML/AI solutions across Autonomous Maintenance, Progressive Maintenance and Loss Elimination, spanning 18+ sites and all business units, from use-case definition to production. Delivered ~$15M in estimated value and identified $38M in additional potential.",
+        "Global capability building: led the end-to-end Manufacturing AI Qualification Program across 4 regions, designing and delivering 8 sessions that trained 200+ participants and enabled the delivery of 19 AI use cases within a compressed timeframe.",
+        "Global AI portfolio & cross-functional leadership: orchestrated collaboration across manufacturing, IT, data science, engineering and external technology partners to shape and scale the global low-code AI and anomaly-detection portfolio, from identifying high-value problems and aligning stakeholders to defining solution architecture and deploying scalable solutions across business units.",
+        "Vendor management: established and managed a strategic AI engineering partnership, introducing a biweekly delivery cadence and DevOps practices to accelerate solution development, integration and deployment.",
+        "Organisational culture lead: led the Culture Team for the Germany Innovation Center, driving engagement, collaboration, inclusion, learning and recognition through initiatives including the site master plan, Career Day and annual employee events."
       ]
     },
     {
-      "title": "Master Thesis Student & Intern – Manufacturing MLOps",
-      "company": "Procter & Gamble · Kronberg (thesis with TH Köln)",
+      "title": "Data Science Internship and Thesis",
+      "company": "Procter & Gamble GmbH · Kronberg Innovation Center, Germany",
       "dateRange": "May 2023 – Feb 2024",
       "bullets": [
-        "Built the first version of AI-X, taking ML models from JMP to PLC-connected edge devices, and led its production-line pilot (see the AI-X case study)."
+        "Product development: cut model-to-deployment time from 90 to 30 days by building an automated, low-code MLOps solution (AI-X) that deploys models to Siemens Industrial Edge through a staged CI/CD pipeline (Azure ML, GitHub, Power Apps).",
+        "Product management: shipped a production release in agile sprints, enforcing quality through SonarQube and IT compliance review, then drove adoption through enablement sessions and hackathons."
       ]
     },
     {
-      "title": "Working Student – Data Science, Sensor Systems",
-      "company": "Aptiv GmbH · Wiehl",
+      "title": "Werkstudent – Alarm Sensor Systems",
+      "company": "Aptiv GmbH · Wiehl, Germany",
       "dateRange": "Oct 2022 – Mar 2023",
       "bullets": [
-        "Signal processing and optimisation in MATLAB for a vehicle breakage alarm-sensor system.",
-        "Localised incidents using neural-network classification; supported sensor planning and installation."
+        "Developed a neural-network classifier that distinguishes glass from metal impacts for a new vehicle alarm sensor, reaching 88% accuracy and adding damage-type detection beyond the existing left, right, door and rear localisation.",
+        "Performed signal processing, analysis and feature optimisation on sensor data in MATLAB.",
+        "Collaborated on sensor planning and installation on test vehicles, and reviewed project goals monthly with the project manager and production team."
       ]
     },
     {
-      "title": "Internships – Data Science & Control Systems",
-      "company": "Remark Skill Education · Decibel's Lab · Delhi",
-      "dateRange": "2020 – 2021",
+      "title": "Data Science Intern",
+      "company": "Remark Skill Education · Delhi, India",
+      "dateRange": "May 2021 – Jun 2021",
       "bullets": [
-        "CNN-based handwritten character recognition; numerical modelling and simulation of vehicle and drone systems."
+        "Built handwritten character recognition in Python using convolutional neural networks (Keras and TensorFlow)."
       ]
     }
   ],
   "skillGroups": [
     {
-      "name": "Program & product leadership",
+      "name": "Leadership",
       "items": [
         "Global program management",
         "Stakeholder & vendor management",
-        "Change management & adoption",
         "Capability building & coaching",
-        "Digital product management"
+        "Training program design",
+        "Change management",
+        "Agile delivery"
       ],
       "proof": [
         {
@@ -512,13 +557,14 @@
       ]
     },
     {
-      "name": "Applied AI",
+      "name": "AI",
       "items": [
         "Anomaly detection",
         "Predictive maintenance",
+        "Time-series forecasting",
         "Soft sensors",
-        "Time-series ML",
-        "Generative & agentic AI"
+        "GenAI & AI agents",
+        "JMP"
       ],
       "proof": [
         {
@@ -535,11 +581,12 @@
       "name": "MLOps & cloud",
       "items": [
         "Azure ML",
-        "Azure Databricks",
+        "Databricks",
+        "AWS",
         "Docker",
-        "GitHub & CI/CD",
-        "Python",
-        "SQL"
+        "GitHub",
+        "CI/CD",
+        "Prometheus"
       ],
       "proof": [
         {
@@ -552,10 +599,13 @@
       "name": "Industrial / OT",
       "items": [
         "Siemens Industrial Edge",
-        "SmartBox",
-        "PLC integration",
+        "PLC integration (S7, Rockwell, Mitsubishi)",
         "OPC UA",
-        "MQTT"
+        "MQTT",
+        "Profinet",
+        "Modbus TCP/IP",
+        "Node-RED",
+        "TIA Portal"
       ],
       "proof": [
         {
@@ -566,6 +616,17 @@
           "label": "Anomaly detection",
           "href": "#anomaly-detection"
         }
+      ]
+    },
+    {
+      "name": "Programming",
+      "items": [
+        "Python",
+        "R",
+        "SQL",
+        "MATLAB / Simulink",
+        "Power BI",
+        "Power Apps"
       ]
     }
   ],
@@ -596,12 +657,12 @@
       "year": "2026"
     },
     {
-      "name": "SCI Solution Provider Award",
+      "name": "Supply Chain Innovation Solution Provider Award",
       "org": "Procter & Gamble",
       "year": "2026"
     },
     {
-      "name": "Deutschlandstipendium",
+      "name": "Deutschlandstipendium (national merit scholarship)",
       "org": "TH Köln",
       "year": "2021 – 2024"
     },
@@ -614,13 +675,13 @@
     "intro": "Outside work I'm curious about where IoT, growth and futuristic AI are heading — and I like learning in public and helping others get started with AI.",
     "photos": [
       {
-        "caption": "On the road"
+        "caption": "Travelling"
       },
       {
-        "caption": "Race day"
+        "caption": "Through my lens"
       },
       {
-        "caption": "In the kitchen"
+        "caption": "Digital art"
       },
       {
         "caption": "Award moment"
@@ -629,7 +690,7 @@
     "currently": [
       {
         "label": "Learning",
-        "value": "German, A2 and climbing"
+        "value": "German, B1 and climbing"
       },
       {
         "label": "Building",
@@ -644,7 +705,7 @@
         "value": "A global community of AI practitioners"
       }
     ],
-    "languages": "English, Tamil, Hindi and German (learning)",
+    "languages": "English (C2), German (B1), Tamil and Hindi",
     "personality": {
       "type": "ENFJ-A",
       "name": "The Protagonist · Assertive",
@@ -652,28 +713,20 @@
     },
     "interests": [
       {
+        "emoji": "📖",
+        "label": "Reading novels"
+      },
+      {
         "emoji": "✈️",
-        "label": "Travel"
+        "label": "Travelling"
       },
       {
-        "emoji": "🏃‍♀️",
-        "label": "Running"
+        "emoji": "📷",
+        "label": "Photography"
       },
       {
-        "emoji": "🍲",
-        "label": "Food & cooking"
-      },
-      {
-        "emoji": "🎬",
-        "label": "Movies"
-      },
-      {
-        "emoji": "📚",
-        "label": "Learning German"
-      },
-      {
-        "emoji": "🤖",
-        "label": "Futuristic AI"
+        "emoji": "🎨",
+        "label": "Digital art"
       }
     ]
   },
