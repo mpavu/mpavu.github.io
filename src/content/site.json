@@ -3,7 +3,7 @@
   "title": "Manufacturing AI Manager at Procter & Gamble",
   "tagline": "Industrial AI · MLOps · Edge AI · Global AI Program Leadership",
   "headline": "Turning AI breakthroughs into factory-floor reality.",
-  "status": "Open to TPM, PM and technical AI roles",
+  "status": "Open to jobs",
   "location": "Frankfurt am Main, Germany",
   "description": "Pavitra Murugesan — Manufacturing AI Manager at Procter & Gamble. Scaling industrial AI, MLOps and edge AI across 18+ plants and 11+ business units.",
   "siteUrl": "https://mpavu.github.io",
@@ -35,6 +35,9 @@
       "name": "Smart Self-Improving Lines: turning one-off AI wins into self-updating playbooks",
       "id": "smart-lines",
       "tag": "Ongoing · Agentic AI · Scale-up",
+      "problem": "High-value AI pilots tackling our largest sources of scrap (filling, labelling) were trapped on the lines where they were born, because scaling relied on tribal knowledge held by a few experts.",
+      "result": "Established a repeatable global scaling path (Pilot → Standard → Demo site → Scale). **Perfect Fill** and the **PE Labeler** became our first plug-and-play standards, with cappers next.",
+      "learning": "A pilot isn't a product until someone else can run it without you. Write the playbook while the knowledge is still fresh.",
       "role": "Drove the concept end-to-end: defined the Common Best Approach (CBA), aligned business and technical stakeholders, and partnered with sites to select lead and demo lines.",
       "flow": [
         "Isolated pilot",
@@ -43,10 +46,7 @@
         "Demo site proof",
         "Global line scale"
       ],
-      "problem": "High-value AI pilots tackling our largest sources of scrap (filling, labelling) were trapped on the lines where they were born, because scaling relied on tribal knowledge held by a few experts.",
       "action": "Developed the Common Best Approach (CBA) to capture proven solutions end-to-end, structuring technical readiness around SmartBox, AI Inference Server, GitHub, connectivity, automation-platform requirements and site ownership roles. Introduced AI agents to document solutions and auto-generate step-by-step workflows for repeatable tasks, so the playbook improves with every deployment.",
-      "result": "Established a repeatable global scaling path (Pilot → Standard → Demo site → Scale). **Perfect Fill** and the **PE Labeler** became our first plug-and-play standards, with cappers next.",
-      "learning": "A pilot isn't a product until someone else can run it without you. Write the playbook while the knowledge is still fresh.",
       "skills": [
         "Agentic AI",
         "Knowledge management",
@@ -54,24 +54,15 @@
         "Stakeholder alignment",
         "SmartBox",
         "AI Inference Server"
-      ],
-      "kpis": [
-        {
-          "value": "3",
-          "label": "core scrap killers scaling"
-        },
-        {
-          "value": "Agentic",
-          "label": "self-updating docs"
-        }
-      ],
-      "analogy": "Think of a star chef cooking a masterpiece from memory versus a Michelin kitchen with a living recipe book. We had brilliant \"one-off chefs\" running AI pilots on single lines. I'm building the franchise system that lets other factories run the solution, using AI agents to refine the recipe after every rollout.",
-      "visual": "playbook"
+      ]
     },
     {
       "name": "Anomaly detection: catching the multi-million-dollar failures you have never seen",
       "id": "anomaly-detection",
       "tag": "Predictive maintenance · Quality",
+      "problem": "Unplanned stops were costly, and a single breakage could cost millions, but supervised ML hit a wall: catastrophic failures are rare, so there were never enough labelled failure examples to train a traditional model.",
+      "result": "Surfaced a rare, **multi-million-dollar mechanical breakage** in pilot testing (confirmed via an induced-failure test) and flagged moulding defects within **24 hours of deployment** on the next line, now scaling across **15 use cases**.",
+      "learning": "When failures are rare, stop waiting for labels. Teach the model what normal looks like and let it tell you when something isn't.",
       "role": "Owned the deployment approach end-to-end and coached site project teams, collaborating with maintenance, quality and engineering stakeholders while sites built and ran their own projects.",
       "flow": [
         "Machine signals",
@@ -80,10 +71,7 @@
         "Day-1 early alert",
         "15x reused pattern"
       ],
-      "problem": "Unplanned stops were costly, and a single breakage could cost millions, but supervised ML hit a wall: catastrophic failures are rare, so there were never enough labelled failure examples to train a traditional model.",
       "action": "Standardised on an off-the-shelf unsupervised anomaly-detection app on Siemens Industrial Edge. Instead of learning what a failure looks like, it learns normal operating baselines to flag rare, high-impact events without labelled failure data. Partnered with site teams on each pilot to turn every win into a plug-and-play deployment pattern.",
-      "result": "Surfaced a rare, **multi-million-dollar mechanical breakage** in pilot testing (confirmed via an induced-failure test) and flagged moulding defects within **24 hours of deployment** on the next line, now scaling across **15 use cases**.",
-      "learning": "When failures are rare, stop waiting for labels. Teach the model what normal looks like and let it tell you when something isn't.",
       "skills": [
         "Unsupervised ML",
         "Anomaly detection",
@@ -91,24 +79,15 @@
         "Time series",
         "Scalable deployment",
         "Stakeholder management"
-      ],
-      "kpis": [
-        {
-          "value": "15",
-          "label": "live use cases on 1 standard"
-        },
-        {
-          "value": "Day 1",
-          "label": "accurate defect alerts"
-        }
-      ],
-      "analogy": "If you train a security guard using only mugshots of past thieves, they will miss a brand-new intruder. Instead, we taught the AI what a normal, healthy machine looks like, so the moment anything deviates it raises an early alert without needing historical failure labels.",
-      "visual": "heartbeat"
+      ]
     },
     {
       "name": "AI-X: building the \"shipping container\" from data-science laptop to factory machine",
       "id": "ai-x",
       "tag": "Product development · MLOps · Edge AI",
+      "problem": "Building an ML model was never the slow part; getting it onto the machine was. Hand-fitting each model to the Siemens Industrial Edge SDK took as long as building the model itself, and the manual work restarted after every retrain.",
+      "result": "Cut model-to-deployment time from **90 to 30 days**. Shipped a production release in agile sprints with quality enforced through SonarQube and IT compliance review, then drove adoption through enablement sessions and hackathons. Retraining no longer triggers a new deployment project: updates ship through the same CI/CD pipeline.",
+      "learning": "Automate the part everyone repeats, not the part everyone notices.",
       "role": "Conceived, built and owned AI-X as an internal product end-to-end, from first prototype on a production line to the standard packaging route; worked with business stakeholders and IT to drive adoption.",
       "flow": [
         "Python + config text",
@@ -117,10 +96,7 @@
         "Edge SDK package",
         "Auto-telemetry"
       ],
-      "problem": "Building an ML model was never the slow part; getting it onto the machine was. Hand-fitting each model to the Siemens Industrial Edge SDK took as long as building the model itself, and the manual work restarted after every retrain.",
       "action": "Mapped which parts of the Siemens Industrial Edge SDK change from model to model and built a model-agnostic skeleton around them. Engineers describe their Python ML model in a few text inputs, and a staged CI/CD pipeline (Azure ML, GitHub Actions, Power Apps) produces the deployment package end-to-end, complete with pytest unit tests, pre/post-processing gates, SonarQube IT-compliance scans and built-in telemetry for usage and performance.",
-      "result": "Cut model-to-deployment time from **90 to 30 days**. Shipped a production release in agile sprints with quality enforced through SonarQube and IT compliance review, then drove adoption through enablement sessions and hackathons. Retraining no longer triggers a new deployment project: updates ship through the same CI/CD pipeline.",
-      "learning": "Automate the part everyone repeats, not the part everyone notices.",
       "skills": [
         "CI/CD",
         "DevOps",
@@ -131,24 +107,15 @@
         "SonarQube",
         "Siemens Industrial Edge",
         "Agile"
-      ],
-      "kpis": [
-        {
-          "value": "90 → 30",
-          "label": "days from model to deployment"
-        },
-        {
-          "value": "Low-code",
-          "label": "staged CI/CD to the edge"
-        }
-      ],
-      "analogy": "Before standardised shipping containers, loading a cargo ship took weeks because every crate had to be hand-packed. Our ML models had the same problem: every Python model had to be hand-fitted to edge hardware, and re-fitted after every retrain. I built the shipping container.",
-      "visual": "container"
+      ]
     },
     {
       "name": "WISE Coach Qualification (WCQ): turning plant teams into local AI builders",
       "id": "wcq",
       "tag": "Capability building · Change management",
+      "problem": "A central technical team alone cannot scale AI across a global plant network. Solutions only create lasting value when people at the site can spot high-ROI problems, navigate the architecture and own deployments locally.",
+      "result": "Designed and delivered **8 sessions across 4 regions** that trained **200+ participants** and enabled the delivery of **19 AI use cases** within a compressed timeframe, with learning anchored to real plant problems rather than theory.",
+      "learning": "Great technology writes the pilot; empowered local teams write the scale.",
       "role": "Led the Manufacturing AI Qualification Program end-to-end across 4 regions: shaped the qualification, designed the learning journeys and delivered the sessions.",
       "flow": [
         "Capability mapping",
@@ -157,61 +124,34 @@
         "Coached MVP build",
         "Site-owned scale"
       ],
-      "problem": "A central technical team alone cannot scale AI across a global plant network. Solutions only create lasting value when people at the site can spot high-ROI problems, navigate the architecture and own deployments locally.",
       "action": "Mapped regional capability across Python, JMP and SmartBox, and designed hands-on learning paths for coders and non-coders alike, anchored to real plant problems rather than theoretical exercises. Coached participants from initial use-case scoping through MVP development and local adoption.",
-      "result": "Designed and delivered **8 sessions across 4 regions** that trained **200+ participants** and enabled the delivery of **19 AI use cases** within a compressed timeframe, with learning anchored to real plant problems rather than theory.",
-      "learning": "Great technology writes the pilot; empowered local teams write the scale.",
       "skills": [
         "Program leadership",
         "Capability building",
         "Change management",
         "Training design",
         "Cross-regional collaboration"
-      ],
-      "kpis": [
-        {
-          "value": "200+",
-          "label": "participants trained"
-        },
-        {
-          "value": "19",
-          "label": "AI use cases delivered"
-        }
-      ],
-      "analogy": "You can't scale healthcare across a continent by flying one central surgeon to every town for a plaster; you train local paramedics. To scale AI across 18+ sites, WCQ shifts the central team from being the only builders to qualifying local practitioners who spot, build and own AI on their own floors.",
-      "visual": "network"
+      ]
     },
     {
       "name": "Touchless quality: ending 100% manual inspection on a soldering line",
       "id": "touchless-quality",
       "tag": "Quality · Process control",
+      "problem": "Soldering rejects (~1%) were caught only by 100% manual inspection.",
+      "result": "Eliminated **100% manual inspection** and saved **$910K**.",
+      "learning": "The answer is often already in the process data. Look at when defects happen, not only what they are.",
       "flow": [
         "Process data",
         "Reject pattern after maintenance",
         "Pump-current control",
         "No manual inspection"
       ],
-      "problem": "Soldering rejects (~1%) were caught only by 100% manual inspection.",
       "action": "Analysed the process data and found that rejects peaked right after maintenance and tracked the soldering pump current. Put a pump-current control strategy in place at start-up and after cleaning.",
-      "result": "Eliminated **100% manual inspection** and saved **$910K**.",
-      "learning": "The answer is often already in the process data. Look at when defects happen, not only what they are.",
       "skills": [
         "Data analysis",
         "Process control",
         "Quality"
-      ],
-      "kpis": [
-        {
-          "value": "$910K",
-          "label": "saved"
-        },
-        {
-          "value": "100%",
-          "label": "manual inspection eliminated"
-        }
-      ],
-      "visual": "none",
-      "hidden": true
+      ]
     }
   ],
   "caseStudyNote": "Dollar values and metrics reflect internal business cases and team outcomes across global sites, with my specific role stated on each case. Details are kept at a level that respects confidentiality.",
@@ -270,11 +210,11 @@
   "projects": [
     {
       "name": "AI Use-Case Finder",
+      "description": "RAG assistant over P&G's library of 100 AI/ML use cases, used globally by a 200+ member AI community to find proven solutions and reapplication ideas, then start from Common Best Approach templates. Saves hours of site-activation meetings.",
       "status": "In use",
       "categories": [
         "AI"
       ],
-      "description": "RAG assistant over P&G's library of 100 AI/ML use cases, used globally by a 200+ member AI community to find proven solutions and reapplication ideas, then start from Common Best Approach templates. Saves hours of site-activation meetings.",
       "skills": [
         "LLM",
         "RAG",
@@ -284,12 +224,12 @@
     },
     {
       "name": "CavitySense",
+      "description": "Multi-cavity anomaly detection that tracks process signals across 4–32 parallel cavities and pinpoints which cavity is drifting and when, so lines no longer stop to hunt for the faulty one. Scaled from one line to quality, scrap and breakdown use cases, with $470K per year in potential.",
       "status": "Scaling",
       "categories": [
         "ML",
         "IoT"
       ],
-      "description": "Multi-cavity anomaly detection that tracks process signals across 4–32 parallel cavities and pinpoints which cavity is drifting and when, so lines no longer stop to hunt for the faulty one. Scaled from one line to quality, scrap and breakdown use cases, with $470K per year in potential.",
       "skills": [
         "Anomaly detection",
         "Process signals",
@@ -313,7 +253,6 @@
     },
     {
       "name": "Touchless Quality: Soldering",
-      "categories": [],
       "description": "Found that soldering rejects (~1%) peaked right after maintenance and tracked the pump current, then put a pump-current control strategy in place at start-up and after cleaning. Eliminated 100% manual inspection and saved $910K.",
       "skills": [
         "Data analysis",
@@ -322,11 +261,11 @@
     },
     {
       "name": "AI Use-Case ROI Prioritizer",
+      "description": "Public web tool where plant teams describe a problem in plain language and get value, feasibility and data-readiness scores plus a go/no-go recommendation, based on patterns from 55+ industrial AI deployments.",
       "status": "In progress",
       "categories": [
         "AI"
       ],
-      "description": "Public web tool where plant teams describe a problem in plain language and get value, feasibility and data-readiness scores plus a go/no-go recommendation, based on patterns from 55+ industrial AI deployments.",
       "skills": [
         "LLM",
         "Python",
@@ -434,8 +373,12 @@
     }
   ],
   "aboutMe": [
-    "I was a 90s kid who grew up watching science fiction, fascinated by worlds where technology could do things that seemed impossible. I’ve always loved the idea of what could be—and the curiosity to figure out how to make it happen. Looking back, perhaps it’s no surprise that I found my way into IT, AI, and innovation. Today, I get to bring a little of that futuristic thinking into the real world.\n\nAt Procter & Gamble’s Kronberg Innovation Center, I lead the scaling of manufacturing AI across a global plant network—connecting factory-floor challenges with data science, IT, and engineering to turn promising pilots into solutions that work in production.\n\nI’m fascinated by the technology, but even more by what makes innovation stick: solving the right problems, building reusable solutions, bringing cross-functional teams together, and empowering people to carry ideas forward themselves.",
-    "Beyond technology, I’m a curious lifelong learner who enjoys teaching, building teams, and turning ambitious goals into tangible results.\n\nI’m a planner with a bias for action. I like turning ideas into plans and plans into progress. But life rarely follows a perfect roadmap. When things don’t go to plan, I adapt, learn, and keep moving. I’m an optimist about detours; sometimes, what feels like a setback leads somewhere even better than we had imagined.\n\nI’m also a strategic thinker who likes to roll up my sleeves and get things done. I enjoy seeing the bigger picture while figuring out the practical steps to make it happen. And I believe the best ideas rarely succeed in isolation—they need people who challenge one another, share knowledge, and bring out the best in each other. For me, that’s where strategy turns into progress: when good ideas meet good people and the willingness to make things happen."
+    "I was a 90s kid who grew up watching science fiction, fascinated by worlds where technology could do things that seemed impossible. I’ve always loved the idea of what could be—and the curiosity to figure out how to make it happen. Looking back, perhaps it’s no surprise that I found my way into IT, AI, and innovation. Today, I get to bring a little of that futuristic thinking into the real world.",
+    "At Procter & Gamble’s Kronberg Innovation Center, I lead the scaling of manufacturing AI across a global plant network—connecting factory-floor challenges with data science, IT, and engineering to turn promising pilots into solutions that work in production.",
+    "I’m fascinated by the technology, but even more by what makes innovation stick: solving the right problems, building reusable solutions, bringing cross-functional teams together, and empowering people to carry ideas forward themselves.",
+    "Beyond technology, I’m a curious lifelong learner who enjoys teaching, building teams, and turning ambitious goals into tangible results.",
+    "I’m a planner with a bias for action. I like turning ideas into plans and plans into progress. But life rarely follows a perfect roadmap. When things don’t go to plan, I adapt, learn, and keep moving. I’m an optimist about detours; sometimes, what feels like a setback leads somewhere even better than we had imagined.",
+    "I’m also a strategic thinker who likes to roll up my sleeves and get things done. I enjoy seeing the bigger picture while figuring out the practical steps to make it happen. And I believe the best ideas rarely succeed in isolation—they need people who challenge one another, share knowledge, and bring out the best in each other. For me, that’s where strategy turns into progress: when good ideas meet good people and the willingness to make things happen."
   ],
   "snapshot": [
     {
@@ -729,6 +672,5 @@
         "label": "Digital art"
       }
     ]
-  },
-  "caseStudyHook": "Most industrial AI dies in \"pilot purgatory.\" Here is how I turn isolated lab experiments into self-sustaining production systems across 18+ global sites."
+  }
 }
