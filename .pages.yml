@@ -76,98 +76,6 @@ content:
             type: string
 
       # ---------- Case studies ----------
-      - name: caseStudyHook
-        label: Case studies – intro line under the heading
-        type: text
-      - name: caseStudies
-        label: Case studies
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{name}"
-        fields:
-          - name: name
-            label: Title
-            type: string
-          - name: id
-            label: Link name (short, no spaces, e.g. ai-x; other sections link to it as #ai-x)
-            type: string
-          - name: hidden
-            label: Hide this case study
-            type: boolean
-          - name: tag
-            label: Category tag
-            type: string
-          - name: kpis
-            label: Headline numbers (shown top right; two work best)
-            type: object
-            list: true
-            fields:
-              - name: value
-                label: Number or short word
-                type: string
-              - name: label
-                label: What it means
-                type: string
-          - name: smart
-            label: SMART story
-            type: object
-            description: Wrap words in **double asterisks** to make them bold. An empty row is hidden.
-            fields:
-              - name: specific
-                label: S – Specific (the exact problem and goal)
-                type: text
-              - name: measurable
-                label: M – Measurable (targets and results in numbers)
-                type: text
-              - name: achievable
-                label: A – Achievable (approach, tools, team, your role)
-                type: text
-              - name: relevant
-                label: R – Relevant (why it mattered to the business)
-                type: text
-              - name: timeBound
-                label: T – Time-bound (start, milestones, duration)
-                type: text
-          - name: analogy
-            label: Old format – analogy (only used if SMART is empty)
-            type: text
-          - name: visual
-            label: Animation
-            type: select
-            options:
-              values: [none, playbook, heartbeat, container, network]
-          - name: problem
-            label: Old format – The friction (only used if SMART is empty)
-            type: text
-            description: Wrap words in **double asterisks** to make them bold.
-          - name: result
-            label: Old format – The impact (only used if SMART is empty)
-            type: text
-            description: Wrap words in **double asterisks** to make them bold.
-          - name: learning
-            label: Lesson learned
-            type: text
-          - name: role
-            label: Old format – My role (inside "How I built it") (only used if SMART is empty)
-            type: text
-          - name: flow
-            label: Old format – Flow diagram steps (inside "How I built it"; last one is highlighted) (only used if SMART is empty)
-            type: string
-            list: true
-          - name: action
-            label: Old format – What I did (inside "How I built it") (only used if SMART is empty)
-            type: text
-          - name: skills
-            label: Skill chips
-            type: string
-            list: true
-      - name: caseStudyNote
-        label: Case studies – footnote (how numbers are estimated)
-        type: text
-
-      # ---------- Coinfluence ----------
       - name: featuredProject
         label: Featured project (Coinfluence)
         type: object
@@ -450,3 +358,102 @@ content:
               - name: label
                 label: Label
                 type: string
+
+  - name: case-studies
+    label: Case studies
+    type: file
+    path: src/content/case-studies.json
+    format: json
+    fields:
+      - name: caseStudyHook
+        label: Case studies – intro line under the heading
+        type: text
+      - name: caseStudies
+        label: Case studies
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Title
+            type: string
+          - name: id
+            label: Link name (short, no spaces, e.g. ai-x; other sections link to it as #ai-x)
+            type: string
+          - name: hidden
+            label: Hide this case study
+            type: boolean
+          - name: tag
+            label: Category tag
+            type: string
+          - name: kpis
+            label: Headline numbers (shown top right; two work best)
+            type: object
+            list: true
+            fields:
+              - name: value
+                label: Number or short word
+                type: string
+              - name: label
+                label: What it means
+                type: string
+          - name: smart
+            label: SMART story
+            type: object
+            description: Wrap words in **double asterisks** to make them bold. An empty row is hidden.
+            fields:
+              - name: specific
+                label: S – Specific (the exact problem and goal)
+                type: text
+              - name: measurable
+                label: M – Measurable (targets and results in numbers)
+                type: text
+              - name: achievable
+                label: A – Achievable (approach, tools, team, your role)
+                type: text
+              - name: relevant
+                label: R – Relevant (why it mattered to the business)
+                type: text
+              - name: timeBound
+                label: T – Time-bound (start, milestones, duration)
+                type: text
+          - name: analogy
+            label: Old format – analogy (only used if SMART is empty)
+            type: text
+          - name: visual
+            label: Animation
+            type: select
+            options:
+              values: [none, playbook, heartbeat, container, network]
+          - name: problem
+            label: Old format – The friction (only used if SMART is empty)
+            type: text
+            description: Wrap words in **double asterisks** to make them bold.
+          - name: result
+            label: Old format – The impact (only used if SMART is empty)
+            type: text
+            description: Wrap words in **double asterisks** to make them bold.
+          - name: learning
+            label: Lesson learned
+            type: text
+          - name: role
+            label: Old format – My role (inside "How I built it") (only used if SMART is empty)
+            type: text
+          - name: flow
+            label: Old format – Flow diagram steps (inside "How I built it"; last one is highlighted) (only used if SMART is empty)
+            type: string
+            list: true
+          - name: action
+            label: Old format – What I did (inside "How I built it") (only used if SMART is empty)
+            type: text
+          - name: skills
+            label: Skill chips
+            type: string
+            list: true
+      - name: caseStudyNote
+        label: Case studies – footnote (how numbers are estimated)
+        type: text
+
+      # ---------- Coinfluence ----------

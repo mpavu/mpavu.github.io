@@ -1,0 +1,169 @@
+{
+  "caseStudyHook": "Most industrial AI dies in \"pilot purgatory.\" Here is how I turn isolated lab experiments into self-sustaining production systems across 18+ global sites.",
+  "caseStudies": [
+    {
+      "name": "Smart Self-Improving Lines: scaling one fix to many lines, in parallel",
+      "id": "smart-lines",
+      "tag": "Ongoing · Agentic AI · Global scale-up",
+      "learning": "A pilot isn't a product until someone else can run it without you. Write the playbook while the knowledge is still fresh.",
+      "skills": [
+        "Agentic AI",
+        "LLM",
+        "Closed-loop control",
+        "Scale-up strategy",
+        "Knowledge management",
+        "Stakeholder alignment"
+      ],
+      "kpis": [
+        {
+          "value": "38%",
+          "label": "of common failures, across 8 problems"
+        },
+        {
+          "value": "$500K",
+          "label": "per labeller instance, 20+ lines"
+        }
+      ],
+      "smart": {
+        "specific": "Take proven solutions for our most common losses from one line to many lines **in parallel**. Single-line fixes stay hard-coded and specific, so we bucketed the top losses into two scalable themes: **auto-centerline closed loop** and **equipment performance**.",
+        "measurable": "**8 common problems** (labellers, filling, capping, glue and more) that account for **38% of common failures**. Labellers alone scale to **20+ lines** at about **$500K per instance**; pilot and demo lines set the exact average value per instance before scale-up.",
+        "achievable": "Run a pilot and a demo line per problem, then capture the solution in a Common Best Approach (CBA) template for fast reapplication. An LLM agent, the AI Use-Case Finder, helps sites find the right use case and hands them the CBA: team charter, inputs and outputs, model artifacts.",
+        "relevant": "These are the biggest shared sources of loss across the network, so every reapplied solution compounds value instead of starting from zero.",
+        "timeBound": "Started in **June 2025 (FY26)**. All lead lines and CBAs are in place; next is parallel reapplication across lines and sites."
+      },
+      "visual": "playbook"
+    },
+    {
+      "name": "Anomaly detection: the foundation for unattended operations",
+      "id": "anomaly-detection",
+      "tag": "Predictive maintenance · Quality",
+      "learning": "When failures are rare, stop waiting for labels. Teach the model what normal looks like and let it tell you when something isn't.",
+      "skills": [
+        "Unsupervised ML",
+        "Anomaly detection",
+        "Siemens Industrial Edge",
+        "Time series",
+        "Operator adoption",
+        "Stakeholder management"
+      ],
+      "kpis": [
+        {
+          "value": "$5.8M",
+          "label": "savings opened by the first project"
+        },
+        {
+          "value": "15",
+          "label": "use cases on one standard"
+        }
+      ],
+      "smart": {
+        "specific": "Build an anomaly-detection portfolio as the foundation for **unattended operations**, so teams intervene at the right moment on problems such as nozzle degradation, motors and mills, and moulding, without needing labelled failure data.",
+        "measurable": "The first project detected a mill anomaly behind heavy scrap and opened **$5.8M** in savings. The portfolio now runs **15 use cases** on one standard approach, including moulding defects flagged within **24 hours** of deployment.",
+        "achievable": "Started the portfolio with several easy-to-use tools, including an off-the-shelf unsupervised app on Siemens Industrial Edge, to drive adoption with operators. I own the deployment approach and coach site teams, who build and run their own projects.",
+        "relevant": "Unplanned stops and scrap stand between today's lines and unattended operations; operators need early, trustworthy signals to act on.",
+        "timeBound": ""
+      },
+      "visual": "heartbeat"
+    },
+    {
+      "name": "AI-X: low-code MLOps from data-science laptop to factory machine",
+      "id": "ai-x",
+      "tag": "Product development · MLOps · Edge AI",
+      "learning": "Automate the part everyone repeats, not the part everyone notices.",
+      "skills": [
+        "CI/CD",
+        "DevOps",
+        "Azure ML",
+        "GitHub Actions",
+        "Power Apps",
+        "SonarQube",
+        "Siemens Industrial Edge",
+        "Product ownership",
+        "Agile"
+      ],
+      "kpis": [
+        {
+          "value": "90 → 30",
+          "label": "days from model to deployment"
+        },
+        {
+          "value": "18+",
+          "label": "use cases deployed across sites & BUs"
+        }
+      ],
+      "smart": {
+        "specific": "Remove the deployment bottleneck: give data scientists and engineers a **low-code** way to package any ML model for Siemens Industrial Edge, and to redeploy after every retrain without starting over.",
+        "measurable": "Cut model-to-deployment time from **90 to 30 days**; **18+ use cases** deployed through AI-X across multiple sites and business units.",
+        "achievable": "Mapped which parts of the Edge SDK change per model and built a model-agnostic skeleton with a staged **CI/CD pipeline** (Azure ML, GitHub Actions, Power Apps), pytest tests, SonarQube and IT compliance review. Shipped in agile sprints and drove adoption through dedicated enablement sessions of about **20 people each**, run within the WISE Coach Qualification.",
+        "relevant": "Packaging, not model building, was slowing AI adoption, and every retrain restarted the manual work.",
+        "timeBound": "First version built during my master thesis (2023–24); production release in **June 2024**, completed in **January 2025**."
+      },
+      "visual": "container"
+    },
+    {
+      "name": "WISE Coach Qualification (WCQ): turning plant teams into local AI builders",
+      "id": "wcq",
+      "tag": "Capability building · Change management",
+      "learning": "Great technology writes the pilot; empowered local teams write the scale.",
+      "skills": [
+        "Program leadership",
+        "Capability building",
+        "Change management",
+        "Training design",
+        "Technical coaching",
+        "Global collaboration"
+      ],
+      "kpis": [
+        {
+          "value": "$9M",
+          "label": "value from 19 use cases"
+        },
+        {
+          "value": "4.7/5",
+          "label": "participant rating, every session"
+        }
+      ],
+      "smart": {
+        "specific": "Build local AI capability in every region (**North America, Latin America, Asia and Europe**) so plant teams can find, build and own AI use cases instead of relying on one central team.",
+        "measurable": "**207 people qualified** in 4 sessions last fiscal year, delivering **19 use cases worth $9M**, with ratings **above 4.7 out of 5** in every session. This fiscal year: **10 sessions** planned with at least **20 participants** each.",
+        "achievable": "Mapped capability across Python, JMP and SmartBox and designed a hands-on qualification in which teams reach MVP and feasibility, then coached them on to PoC and pilot. I lead the program end-to-end.",
+        "relevant": "Central teams don't scale; local owners do. Every qualified practitioner becomes a builder on their own line.",
+        "timeBound": "**3 days** to MVP and feasibility within the qualification; **30–90 days** to PoC and pilot."
+      },
+      "visual": "network"
+    },
+    {
+      "name": "Touchless quality: ending 100% manual inspection on a soldering line",
+      "id": "touchless-quality",
+      "tag": "Quality · Process control",
+      "problem": "Soldering rejects (~1%) were caught only by 100% manual inspection.",
+      "result": "Eliminated **100% manual inspection** and saved **$910K**.",
+      "learning": "The answer is often already in the process data. Look at when defects happen, not only what they are.",
+      "flow": [
+        "Process data",
+        "Reject pattern after maintenance",
+        "Pump-current control",
+        "No manual inspection"
+      ],
+      "action": "Analysed the process data and found that rejects peaked right after maintenance and tracked the soldering pump current. Put a pump-current control strategy in place at start-up and after cleaning.",
+      "skills": [
+        "Data analysis",
+        "Process control",
+        "Quality"
+      ],
+      "hidden": true,
+      "visual": "none",
+      "kpis": [
+        {
+          "value": "$910K",
+          "label": "saved"
+        },
+        {
+          "value": "100%",
+          "label": "manual inspection eliminated"
+        }
+      ]
+    }
+  ],
+  "caseStudyNote": "Dollar values and metrics reflect internal business cases and team outcomes across global sites, with my specific role stated on each case. Details are kept at a level that respects confidentiality."
+}
