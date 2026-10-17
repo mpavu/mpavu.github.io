@@ -110,34 +110,54 @@ content:
               - name: label
                 label: What it means
                 type: string
+          - name: smart
+            label: SMART story
+            type: object
+            description: Wrap words in **double asterisks** to make them bold. An empty row is hidden.
+            fields:
+              - name: specific
+                label: S – Specific (the exact problem and goal)
+                type: text
+              - name: measurable
+                label: M – Measurable (targets and results in numbers)
+                type: text
+              - name: achievable
+                label: A – Achievable (approach, tools, team, your role)
+                type: text
+              - name: relevant
+                label: R – Relevant (why it mattered to the business)
+                type: text
+              - name: timeBound
+                label: T – Time-bound (start, milestones, duration)
+                type: text
           - name: analogy
-            label: The analogy (one or two sentences)
+            label: Old format – analogy (only used if SMART is empty)
             type: text
           - name: visual
-            label: Animation next to the analogy
+            label: Animation
             type: select
             options:
               values: [none, playbook, heartbeat, container, network]
           - name: problem
-            label: The friction
+            label: Old format – The friction (only used if SMART is empty)
             type: text
             description: Wrap words in **double asterisks** to make them bold.
           - name: result
-            label: The impact
+            label: Old format – The impact (only used if SMART is empty)
             type: text
             description: Wrap words in **double asterisks** to make them bold.
           - name: learning
             label: Lesson learned
             type: text
           - name: role
-            label: My role (inside "How I built it")
+            label: Old format – My role (inside "How I built it") (only used if SMART is empty)
             type: text
           - name: flow
-            label: Flow diagram steps (inside "How I built it"; last one is highlighted)
+            label: Old format – Flow diagram steps (inside "How I built it"; last one is highlighted) (only used if SMART is empty)
             type: string
             list: true
           - name: action
-            label: What I did (inside "How I built it")
+            label: Old format – What I did (inside "How I built it") (only used if SMART is empty)
             type: text
           - name: skills
             label: Skill chips
