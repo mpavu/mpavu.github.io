@@ -1,16 +1,19 @@
 ---
 import { siteConfig } from "../config";
 import Icon from "./Icon.astro";
-import FeaturedProject from "./FeaturedProject.astro";
 
-const projects = siteConfig.projects ?? [];
-const categories = (siteConfig.projectCategories ?? []).filter(Boolean);
+// Coinfluence (featuredProject) is shown as a regular card, first in the grid
 const fp = siteConfig.featuredProject;
+const fpCard = fp
+  ? { name: fp.name, status: "Independent build", description: fp.summary, skills: fp.stack ?? [], categories: fp.categories ?? [], link: "" }
+  : null;
+const projects = [...(fpCard ? [fpCard] : []), ...(siteConfig.projects ?? [])];
+const categories = (siteConfig.projectCategories ?? []).filter(Boolean);
 const isExternal = (link: string) => /^https?:\/\//.test(link);
 ---
 
 {
-  (projects.length > 0 || fp) && (
+  projects.length > 0 && (
     <section id="projects" class="max-w-7xl mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24">
       <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
         <div>
@@ -35,14 +38,8 @@ const isExternal = (link: string) => /^https?:\/\//.test(link);
         )}
       </div>
 
-      {fp && (
-        <div class="mt-10">
-          <FeaturedProject />
-        </div>
-      )}
-
       {projects.length > 0 && (
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4">
           {projects.map((project) => {
             const link = project.link || "";
             const Tag = link ? "a" : "div";
